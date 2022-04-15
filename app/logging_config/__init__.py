@@ -28,6 +28,9 @@ def after_request_logging(response):
 
     log = logging.getLogger("myApp")
     log.info("My App Logger")
+    log = logging.getLogger("request")
+    log.info("requested")
+
     return response
 
 
@@ -35,9 +38,12 @@ def after_request_logging(response):
 def configure_logging():
     logging.config.dictConfig(LOGGING_CONFIG)
     log = logging.getLogger("myApp")
-    log.info("My App Logger")
+    log.info("My App Logger first request")
     log = logging.getLogger("myerrors")
-    log.info("THis broke")
+    log.info("THis broke first")
+    log = logging.getLogger("request")
+    log.info("first request")
+
 
 
 
@@ -51,7 +57,7 @@ LOGGING_CONFIG = {
         },
         'RequestFormatter': {
             '()': 'app.logging_config.log_formatters.RequestFormatter',
-            'format': '[%(asctime)s] [%(process)d] %(remote_addr)s requested %(url)s'
+            'format': '[%(asctime)s] [%(process)d] %(remote_addr)s requested %(url)s\n'
                         '%(levelname)s in %(module)s: %(message)s'
         }
     },
@@ -134,6 +140,11 @@ LOGGING_CONFIG = {
         'myerrors': {  # if __name__ == '__main__'
             'handlers': ['file.handler.errors'],
             'level': 'DEBUG',
+            'propagate': False
+        },
+        'request': {  # if __name__ == '__main__'
+            'handlers': ['file.handler.request'],
+            'level': 'INFO',
             'propagate': False
         },
 

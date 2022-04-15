@@ -1,0 +1,44 @@
+[2022-04-15 04:49:09,308] [20] 127.0.0.1 requested http://localhost/
+INFO in __init__: first request
+[2022-04-15 04:49:09,421] [20] 127.0.0.1 requested http://localhost/
+INFO in __init__: requested
+[2022-04-15 04:49:09,439] [20] 127.0.0.1 requested http://localhost/dashboard
+INFO in __init__: first request
+[2022-04-15 04:49:09,440] [20] 127.0.0.1 requested http://localhost/dashboard
+INFO in __init__: requested
+[2022-04-15 04:49:09,547] [20] 127.0.0.1 requested http://localhost/register
+INFO in __init__: requested
+[2022-04-15 04:49:09,557] [20] 127.0.0.1 requested http://localhost/login
+INFO in __init__: requested
+[2022-04-15 04:49:09,584] [20] 127.0.0.1 requested http://localhost/
+INFO in __init__: first request
+[2022-04-15 04:49:09,704] [20] 127.0.0.1 requested http://localhost/
+INFO in __init__: requested
+[2022-04-15 04:49:09,720] [20] 127.0.0.1 requested http://localhost/
+INFO in __init__: first request
+[2022-04-15 04:49:09,850] [20] 127.0.0.1 requested http://localhost/
+INFO in __init__: requested
+[2022-04-15 04:49:09,866] [20] 127.0.0.1 requested http://localhost/
+INFO in __init__: first request
+[2022-04-15 04:49:09,970] [20] 127.0.0.1 requested http://localhost/
+INFO in __init__: requested
+[2022-04-15 04:49:09,987] [20] 127.0.0.1 requested http://localhost/
+INFO in __init__: first request
+[2022-04-15 04:49:10,098] [20] 127.0.0.1 requested http://localhost/
+INFO in __init__: requested
+[2022-04-15 04:49:10,117] [20] 127.0.0.1 requested http://localhost/
+INFO in __init__: first request
+[2022-04-15 04:49:10,229] [20] 127.0.0.1 requested http://localhost/
+INFO in __init__: requested
+[2022-04-15 04:49:10,247] [20] 127.0.0.1 requested http://localhost/about
+INFO in __init__: first request
+[2022-04-15 04:49:10,356] [20] 127.0.0.1 requested http://localhost/about
+INFO in __init__: requested
+[2022-04-15 04:49:10,373] [20] 127.0.0.1 requested http://localhost/welcome
+INFO in __init__: first request
+[2022-04-15 04:49:10,480] [20] 127.0.0.1 requested http://localhost/welcome
+INFO in __init__: requested
+[2022-04-15 04:49:10,496] [20] 127.0.0.1 requested http://localhost/page5
+INFO in __init__: first request
+[2022-04-15 04:49:10,617] [20] 127.0.0.1 requested http://localhost/page5
+INFO in __init__: requested
