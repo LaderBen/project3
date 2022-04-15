@@ -1,0 +1,8 @@
+2022-04-15 20:09:22,902 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-04-15 20:09:22,902 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+2022-04-15 20:09:22,903 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-04-15 20:09:22,905 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-04-15 20:10:00,117 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-04-15 20:10:00,118 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+2022-04-15 20:10:00,118 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-04-15 20:10:00,120 [INFO] sqlalchemy.engine.Engine: COMMIT
