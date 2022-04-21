@@ -130,3 +130,7 @@ INFO in __init__: requested
 INFO in __init__: first request
 [2022-04-15 20:10:01,009] [30] 127.0.0.1 requested http://localhost/page5
 INFO in __init__: requested
+[2022-04-17 03:23:38,302] [8] 172.19.0.1 requested http://localhost/users
+INFO in __init__: first request
+[2022-04-17 03:23:38,528] [8] 172.19.0.1 requested http://localhost/users
+INFO in __init__: requested

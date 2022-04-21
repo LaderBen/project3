@@ -1,9 +1,19 @@
 from datetime import datetime
 
 from werkzeug.security import check_password_hash, generate_password_hash
+from sqlalchemy.orm import relationship
 from app.db import db
 from flask_login import UserMixin
 
+class Song(db.Model):
+    __tablename__ = 'songs'
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(300), nullable=True, unique=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('Users.id'))
+    user = relationship("Users", back_populates="songs")
+
+    def __init__(self, title):
+        self.title = title
 
 class User(UserMixin, db.Model):
     __tablename__ = 'users'

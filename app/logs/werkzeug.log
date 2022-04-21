@@ -1,0 +1,3 @@
+2022-04-17 03:23:38,531 [INFO] werkzeug: 172.19.0.1 - - [17/Apr/2022 03:23:38] "GET /users HTTP/1.1" 200 -
+2022-04-17 03:23:38,565 [INFO] werkzeug: 172.19.0.1 - - [17/Apr/2022 03:23:38] "GET /bootstrap/static/icons/bootstrap-icons.svg HTTP/1.1" 200 -
+2022-04-17 03:23:38,685 [INFO] werkzeug: 172.19.0.1 - - [17/Apr/2022 03:23:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -

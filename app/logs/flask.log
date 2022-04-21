@@ -70,3 +70,10 @@
 2022-04-15 20:10:00,894 [INFO] app: After Request
 2022-04-15 20:10:00,910 [INFO] app: Before Request
 2022-04-15 20:10:01,009 [INFO] app: After Request
+2022-04-17 03:23:38,303 [INFO] app: Before Request
+2022-04-17 03:23:38,346 [INFO] app: Info level log
+2022-04-17 03:23:38,346 [WARNING] app: Warning level log
+2022-04-17 03:23:38,349 [INFO] app: Browse page loading
+2022-04-17 03:23:38,527 [INFO] app: After Request
+2022-04-17 03:23:38,564 [INFO] app: Before Request
+2022-04-17 03:23:38,669 [INFO] app: Before Request
