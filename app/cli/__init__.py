@@ -16,7 +16,6 @@ def create_log_folder():
     root = os.path.dirname(os.path.abspath(__file__))
     # set the name of the apps log folder to logs
     logdir = os.path.join(root, 'logs')
-    print(logdir)
     # make a directory if it doesn't exist
     if not os.path.exists(logdir):
         os.mkdir(logdir)
