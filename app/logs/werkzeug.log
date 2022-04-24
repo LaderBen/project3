@@ -255,3 +255,12 @@
 2022-04-24 22:12:10,379 [INFO] werkzeug: 172.19.0.1 - - [24/Apr/2022 22:12:10] "[32mPOST /songs/upload HTTP/1.1[0m" 302 -
 2022-04-24 22:12:10,410 [INFO] werkzeug: 172.19.0.1 - - [24/Apr/2022 22:12:10] "GET /songs HTTP/1.1" 200 -
 2022-04-24 22:15:50,315 [INFO] werkzeug:  * Detected change in '/home/myuser/app/songs/__init__.py', reloading
+2022-04-24 22:15:58,122 [INFO] werkzeug: 172.19.0.1 - - [24/Apr/2022 22:15:58] "GET /songs HTTP/1.1" 200 -
+2022-04-24 22:15:59,819 [INFO] werkzeug: 172.19.0.1 - - [24/Apr/2022 22:15:59] "GET /register HTTP/1.1" 200 -
+2022-04-24 22:16:04,416 [INFO] werkzeug: 172.19.0.1 - - [24/Apr/2022 22:16:04] "[32mPOST /register HTTP/1.1[0m" 302 -
+2022-04-24 22:16:04,428 [INFO] werkzeug: 172.19.0.1 - - [24/Apr/2022 22:16:04] "[32mGET /login HTTP/1.1[0m" 302 -
+2022-04-24 22:16:04,446 [INFO] werkzeug: 172.19.0.1 - - [24/Apr/2022 22:16:04] "GET /dashboard HTTP/1.1" 200 -
+2022-04-24 22:16:06,130 [INFO] werkzeug: 172.19.0.1 - - [24/Apr/2022 22:16:06] "GET /songs HTTP/1.1" 200 -
+2022-04-24 22:16:06,381 [INFO] werkzeug: 172.19.0.1 - - [24/Apr/2022 22:16:06] "GET /songs/upload HTTP/1.1" 200 -
+2022-04-24 22:16:10,885 [INFO] werkzeug: 172.19.0.1 - - [24/Apr/2022 22:16:10] "[32mPOST /songs/upload HTTP/1.1[0m" 302 -
+2022-04-24 22:16:10,914 [INFO] werkzeug: 172.19.0.1 - - [24/Apr/2022 22:16:10] "GET /songs HTTP/1.1" 200 -
