@@ -11,7 +11,7 @@ class Config(object):
     db_dir = "database/db.sqlite"
     SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.abspath(db_dir)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    UPLOAD_FOLDER = './uploads'
+    UPLOAD_FOLDER = os.getenv('UPLOAD_FOLDER', BASE_DIR + '/uploads')
 
 
 class ProductionConfig(Config):
@@ -25,4 +25,6 @@ class DevelopmentConfig(Config):
 
 class TestingConfig(Config):
     TESTING = True
+    SQLALCHEMY_DATABASE_URI = "sqlite:///"
     SESSION_COOKIE_SECURE = False
+    DEBUG = True

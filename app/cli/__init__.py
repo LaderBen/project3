@@ -1,5 +1,6 @@
 import click
 import os
+from flask import current_app
 from flask.cli import with_appcontext
 from app.db import db
 
@@ -7,6 +8,10 @@ from app.db import db
 @click.command(name='create-db')
 @with_appcontext
 def create_database():
+    root = current_app.config['BASE_DIR']
+    db_dir = os.path.join(root,'../database')
+    if not os.path.exists(db_dir):
+        os.mkdir(db_dir)
     db.create_all()
 
 @click.command(name='create-log-folder')
