@@ -38,7 +38,6 @@ def songs_upload():
         filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
         if not os.path.exists(current_app.config['UPLOAD_FOLDER']):
             os.mkdir(current_app.config['UPLOAD_FOLDER'])
-        print(form.file)
         form.file.data.save(filepath)
 
         #user = current_user
