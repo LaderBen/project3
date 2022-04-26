@@ -33,6 +33,11 @@ def test_adding_user(application):
         song2 = Song.query.filter_by(title='SuperSongTitle').first()
         assert song2.title == "SuperSongTitle"
         #checking cascade delete
+        db.session.delete(song1)
+        db.session.delete(song2)
+
         db.session.delete(user)
+        db.session.commit()
         assert db.session.query(User).count() == 0
         assert db.session.query(Song).count() == 0
+
