@@ -50,7 +50,7 @@ def register():
                 db.session.add(user)
                 db.session.commit()
             flash('Congratulations, you are now a registered user!', "success")
-            return redirect(url_for('auth.login'), 302)
+            return redirect(url_for('auth.login'), 301)
         else:
             flash('Already Registered')
             return redirect(url_for('auth.login'), 302)
