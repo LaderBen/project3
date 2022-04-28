@@ -85,7 +85,7 @@ def test_user_file_upload(client):
     }
     client.post('/songs/upload',data = data)
     time.sleep(1)
-    upload_dir = root / 'app' / 'uploads' / 'music.csv'
+    upload_dir = root / 'app' / 'uploads' / 'home_runner_work_project3_project3_tests_music.csv'
     print(os.listdir(upload_dir.parent))
     assert os.path.exists(upload_dir)
     os.remove(upload_dir)
