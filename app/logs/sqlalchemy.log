@@ -49786,3 +49786,1841 @@ WHERE users.id = ?
 FROM users
 2022-05-01 19:43:27,757 [INFO] sqlalchemy.engine.Engine: [cached since 7.446s ago] ()
 2022-05-01 19:43:27,762 [INFO] sqlalchemy.engine.Engine: ROLLBACK
+2022-05-01 20:03:16,660 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:16,660 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("song_user")
+2022-05-01 20:03:16,660 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,661 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("song_user")
+2022-05-01 20:03:16,661 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,661 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("songs")
+2022-05-01 20:03:16,661 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,662 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("songs")
+2022-05-01 20:03:16,662 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,662 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+2022-05-01 20:03:16,662 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,663 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("users")
+2022-05-01 20:03:16,663 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,663 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE songs (
+	id INTEGER NOT NULL, 
+	title VARCHAR(300), 
+	artist VARCHAR(300), 
+	year VARCHAR(50), 
+	genre VARCHAR(300), 
+	PRIMARY KEY (id)
+)
+
+
+2022-05-01 20:03:16,663 [INFO] sqlalchemy.engine.Engine: [no key 0.00017s] ()
+2022-05-01 20:03:16,664 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE users (
+	id INTEGER NOT NULL, 
+	email VARCHAR(120) NOT NULL, 
+	password VARCHAR(300) NOT NULL, 
+	about VARCHAR(300), 
+	authenticated BOOLEAN, 
+	registered_on DATETIME, 
+	is_active BOOLEAN DEFAULT '1' NOT NULL, 
+	is_admin BOOLEAN DEFAULT '0' NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (email), 
+	UNIQUE (password)
+)
+
+
+2022-05-01 20:03:16,664 [INFO] sqlalchemy.engine.Engine: [no key 0.00024s] ()
+2022-05-01 20:03:16,665 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE song_user (
+	user_id INTEGER, 
+	song_id INTEGER, 
+	FOREIGN KEY(user_id) REFERENCES users (id), 
+	FOREIGN KEY(song_id) REFERENCES songs (id)
+)
+
+
+2022-05-01 20:03:16,665 [INFO] sqlalchemy.engine.Engine: [no key 0.00016s] ()
+2022-05-01 20:03:16,665 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:16,812 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:16,812 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("song_user")
+2022-05-01 20:03:16,813 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,813 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("song_user")
+2022-05-01 20:03:16,813 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,814 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("songs")
+2022-05-01 20:03:16,814 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,814 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("songs")
+2022-05-01 20:03:16,814 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,814 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+2022-05-01 20:03:16,815 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,815 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("users")
+2022-05-01 20:03:16,815 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,815 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE songs (
+	id INTEGER NOT NULL, 
+	title VARCHAR(300), 
+	artist VARCHAR(300), 
+	year VARCHAR(50), 
+	genre VARCHAR(300), 
+	PRIMARY KEY (id)
+)
+
+
+2022-05-01 20:03:16,816 [INFO] sqlalchemy.engine.Engine: [no key 0.00018s] ()
+2022-05-01 20:03:16,816 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE users (
+	id INTEGER NOT NULL, 
+	email VARCHAR(120) NOT NULL, 
+	password VARCHAR(300) NOT NULL, 
+	about VARCHAR(300), 
+	authenticated BOOLEAN, 
+	registered_on DATETIME, 
+	is_active BOOLEAN DEFAULT '1' NOT NULL, 
+	is_admin BOOLEAN DEFAULT '0' NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (email), 
+	UNIQUE (password)
+)
+
+
+2022-05-01 20:03:16,816 [INFO] sqlalchemy.engine.Engine: [no key 0.00017s] ()
+2022-05-01 20:03:16,817 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE song_user (
+	user_id INTEGER, 
+	song_id INTEGER, 
+	FOREIGN KEY(user_id) REFERENCES users (id), 
+	FOREIGN KEY(song_id) REFERENCES songs (id)
+)
+
+
+2022-05-01 20:03:16,817 [INFO] sqlalchemy.engine.Engine: [no key 0.00016s] ()
+2022-05-01 20:03:16,817 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:16,827 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:16,828 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("song_user")
+2022-05-01 20:03:16,828 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,828 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("song_user")
+2022-05-01 20:03:16,829 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,829 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("songs")
+2022-05-01 20:03:16,829 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,829 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("songs")
+2022-05-01 20:03:16,830 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,830 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+2022-05-01 20:03:16,830 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,830 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("users")
+2022-05-01 20:03:16,830 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,831 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE songs (
+	id INTEGER NOT NULL, 
+	title VARCHAR(300), 
+	artist VARCHAR(300), 
+	year VARCHAR(50), 
+	genre VARCHAR(300), 
+	PRIMARY KEY (id)
+)
+
+
+2022-05-01 20:03:16,831 [INFO] sqlalchemy.engine.Engine: [no key 0.00023s] ()
+2022-05-01 20:03:16,832 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE users (
+	id INTEGER NOT NULL, 
+	email VARCHAR(120) NOT NULL, 
+	password VARCHAR(300) NOT NULL, 
+	about VARCHAR(300), 
+	authenticated BOOLEAN, 
+	registered_on DATETIME, 
+	is_active BOOLEAN DEFAULT '1' NOT NULL, 
+	is_admin BOOLEAN DEFAULT '0' NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (email), 
+	UNIQUE (password)
+)
+
+
+2022-05-01 20:03:16,832 [INFO] sqlalchemy.engine.Engine: [no key 0.00018s] ()
+2022-05-01 20:03:16,832 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE song_user (
+	user_id INTEGER, 
+	song_id INTEGER, 
+	FOREIGN KEY(user_id) REFERENCES users (id), 
+	FOREIGN KEY(song_id) REFERENCES songs (id)
+)
+
+
+2022-05-01 20:03:16,832 [INFO] sqlalchemy.engine.Engine: [no key 0.00023s] ()
+2022-05-01 20:03:16,833 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:16,949 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:16,950 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("song_user")
+2022-05-01 20:03:16,950 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,950 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("song_user")
+2022-05-01 20:03:16,950 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,951 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("songs")
+2022-05-01 20:03:16,951 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,951 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("songs")
+2022-05-01 20:03:16,951 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,952 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+2022-05-01 20:03:16,952 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,952 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("users")
+2022-05-01 20:03:16,952 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:16,953 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE songs (
+	id INTEGER NOT NULL, 
+	title VARCHAR(300), 
+	artist VARCHAR(300), 
+	year VARCHAR(50), 
+	genre VARCHAR(300), 
+	PRIMARY KEY (id)
+)
+
+
+2022-05-01 20:03:16,953 [INFO] sqlalchemy.engine.Engine: [no key 0.00017s] ()
+2022-05-01 20:03:16,954 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE users (
+	id INTEGER NOT NULL, 
+	email VARCHAR(120) NOT NULL, 
+	password VARCHAR(300) NOT NULL, 
+	about VARCHAR(300), 
+	authenticated BOOLEAN, 
+	registered_on DATETIME, 
+	is_active BOOLEAN DEFAULT '1' NOT NULL, 
+	is_admin BOOLEAN DEFAULT '0' NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (email), 
+	UNIQUE (password)
+)
+
+
+2022-05-01 20:03:16,954 [INFO] sqlalchemy.engine.Engine: [no key 0.00018s] ()
+2022-05-01 20:03:16,954 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE song_user (
+	user_id INTEGER, 
+	song_id INTEGER, 
+	FOREIGN KEY(user_id) REFERENCES users (id), 
+	FOREIGN KEY(song_id) REFERENCES songs (id)
+)
+
+
+2022-05-01 20:03:16,954 [INFO] sqlalchemy.engine.Engine: [no key 0.00019s] ()
+2022-05-01 20:03:16,955 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:17,072 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:17,073 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("song_user")
+2022-05-01 20:03:17,073 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,073 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("song_user")
+2022-05-01 20:03:17,074 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,074 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("songs")
+2022-05-01 20:03:17,074 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,074 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("songs")
+2022-05-01 20:03:17,075 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,075 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+2022-05-01 20:03:17,075 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,075 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("users")
+2022-05-01 20:03:17,075 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,076 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE songs (
+	id INTEGER NOT NULL, 
+	title VARCHAR(300), 
+	artist VARCHAR(300), 
+	year VARCHAR(50), 
+	genre VARCHAR(300), 
+	PRIMARY KEY (id)
+)
+
+
+2022-05-01 20:03:17,076 [INFO] sqlalchemy.engine.Engine: [no key 0.00019s] ()
+2022-05-01 20:03:17,077 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE users (
+	id INTEGER NOT NULL, 
+	email VARCHAR(120) NOT NULL, 
+	password VARCHAR(300) NOT NULL, 
+	about VARCHAR(300), 
+	authenticated BOOLEAN, 
+	registered_on DATETIME, 
+	is_active BOOLEAN DEFAULT '1' NOT NULL, 
+	is_admin BOOLEAN DEFAULT '0' NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (email), 
+	UNIQUE (password)
+)
+
+
+2022-05-01 20:03:17,077 [INFO] sqlalchemy.engine.Engine: [no key 0.00017s] ()
+2022-05-01 20:03:17,077 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE song_user (
+	user_id INTEGER, 
+	song_id INTEGER, 
+	FOREIGN KEY(user_id) REFERENCES users (id), 
+	FOREIGN KEY(song_id) REFERENCES songs (id)
+)
+
+
+2022-05-01 20:03:17,077 [INFO] sqlalchemy.engine.Engine: [no key 0.00019s] ()
+2022-05-01 20:03:17,078 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:17,204 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:17,204 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("song_user")
+2022-05-01 20:03:17,205 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,205 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("song_user")
+2022-05-01 20:03:17,205 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,206 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("songs")
+2022-05-01 20:03:17,206 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,206 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("songs")
+2022-05-01 20:03:17,206 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,207 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+2022-05-01 20:03:17,207 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,207 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("users")
+2022-05-01 20:03:17,207 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,208 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE songs (
+	id INTEGER NOT NULL, 
+	title VARCHAR(300), 
+	artist VARCHAR(300), 
+	year VARCHAR(50), 
+	genre VARCHAR(300), 
+	PRIMARY KEY (id)
+)
+
+
+2022-05-01 20:03:17,208 [INFO] sqlalchemy.engine.Engine: [no key 0.00019s] ()
+2022-05-01 20:03:17,209 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE users (
+	id INTEGER NOT NULL, 
+	email VARCHAR(120) NOT NULL, 
+	password VARCHAR(300) NOT NULL, 
+	about VARCHAR(300), 
+	authenticated BOOLEAN, 
+	registered_on DATETIME, 
+	is_active BOOLEAN DEFAULT '1' NOT NULL, 
+	is_admin BOOLEAN DEFAULT '0' NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (email), 
+	UNIQUE (password)
+)
+
+
+2022-05-01 20:03:17,209 [INFO] sqlalchemy.engine.Engine: [no key 0.00020s] ()
+2022-05-01 20:03:17,209 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE song_user (
+	user_id INTEGER, 
+	song_id INTEGER, 
+	FOREIGN KEY(user_id) REFERENCES users (id), 
+	FOREIGN KEY(song_id) REFERENCES songs (id)
+)
+
+
+2022-05-01 20:03:17,210 [INFO] sqlalchemy.engine.Engine: [no key 0.00040s] ()
+2022-05-01 20:03:17,210 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:17,331 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:17,333 [INFO] sqlalchemy.engine.Engine: SELECT users.is_active AS users_is_active, users.id AS users_id, users.email AS users_email, users.password AS users_password, users.about AS users_about, users.authenticated AS users_authenticated, users.registered_on AS users_registered_on, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.email = ?
+ LIMIT ? OFFSET ?
+2022-05-01 20:03:17,333 [INFO] sqlalchemy.engine.Engine: [generated in 0.00034s] ('test@test.com', 1, 0)
+2022-05-01 20:03:17,389 [INFO] sqlalchemy.engine.Engine: INSERT INTO users (email, password, about, authenticated, registered_on) VALUES (?, ?, ?, ?, ?)
+2022-05-01 20:03:17,389 [INFO] sqlalchemy.engine.Engine: [generated in 0.00051s] ('test@test.com', 'pbkdf2:sha256:260000$2czFsVQOhwgSpiMe$fa11911d18a98109a9a75aa72ef9b81b90b6021ae85920b88b37f33a8f6255db', None, 0, '2022-05-01 20:03:17.388053')
+2022-05-01 20:03:17,390 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:17,391 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:17,391 [INFO] sqlalchemy.engine.Engine: SELECT users.is_active AS users_is_active, users.id AS users_id, users.email AS users_email, users.password AS users_password, users.about AS users_about, users.authenticated AS users_authenticated, users.registered_on AS users_registered_on, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.id = ?
+2022-05-01 20:03:17,392 [INFO] sqlalchemy.engine.Engine: [generated in 0.00025s] (1,)
+2022-05-01 20:03:17,393 [INFO] sqlalchemy.engine.Engine: UPDATE users SET is_admin=? WHERE users.id = ?
+2022-05-01 20:03:17,393 [INFO] sqlalchemy.engine.Engine: [generated in 0.00023s] (1, 1)
+2022-05-01 20:03:17,394 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:17,396 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:17,396 [INFO] sqlalchemy.engine.Engine: SELECT users.is_active AS users_is_active, users.id AS users_id, users.email AS users_email, users.password AS users_password, users.about AS users_about, users.authenticated AS users_authenticated, users.registered_on AS users_registered_on, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.email = ?
+ LIMIT ? OFFSET ?
+2022-05-01 20:03:17,396 [INFO] sqlalchemy.engine.Engine: [cached since 0.06348s ago] ('test@test.com', 1, 0)
+2022-05-01 20:03:17,397 [INFO] sqlalchemy.engine.Engine: ROLLBACK
+2022-05-01 20:03:17,407 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:17,408 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("song_user")
+2022-05-01 20:03:17,408 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,408 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("song_user")
+2022-05-01 20:03:17,409 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,409 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("songs")
+2022-05-01 20:03:17,409 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,409 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("songs")
+2022-05-01 20:03:17,410 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,410 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+2022-05-01 20:03:17,410 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,410 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("users")
+2022-05-01 20:03:17,410 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,411 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE songs (
+	id INTEGER NOT NULL, 
+	title VARCHAR(300), 
+	artist VARCHAR(300), 
+	year VARCHAR(50), 
+	genre VARCHAR(300), 
+	PRIMARY KEY (id)
+)
+
+
+2022-05-01 20:03:17,411 [INFO] sqlalchemy.engine.Engine: [no key 0.00018s] ()
+2022-05-01 20:03:17,412 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE users (
+	id INTEGER NOT NULL, 
+	email VARCHAR(120) NOT NULL, 
+	password VARCHAR(300) NOT NULL, 
+	about VARCHAR(300), 
+	authenticated BOOLEAN, 
+	registered_on DATETIME, 
+	is_active BOOLEAN DEFAULT '1' NOT NULL, 
+	is_admin BOOLEAN DEFAULT '0' NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (email), 
+	UNIQUE (password)
+)
+
+
+2022-05-01 20:03:17,412 [INFO] sqlalchemy.engine.Engine: [no key 0.00019s] ()
+2022-05-01 20:03:17,412 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE song_user (
+	user_id INTEGER, 
+	song_id INTEGER, 
+	FOREIGN KEY(user_id) REFERENCES users (id), 
+	FOREIGN KEY(song_id) REFERENCES songs (id)
+)
+
+
+2022-05-01 20:03:17,413 [INFO] sqlalchemy.engine.Engine: [no key 0.00019s] ()
+2022-05-01 20:03:17,413 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:17,525 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:17,526 [INFO] sqlalchemy.engine.Engine: SELECT users.is_active AS users_is_active, users.id AS users_id, users.email AS users_email, users.password AS users_password, users.about AS users_about, users.authenticated AS users_authenticated, users.registered_on AS users_registered_on, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.email = ?
+ LIMIT ? OFFSET ?
+2022-05-01 20:03:17,526 [INFO] sqlalchemy.engine.Engine: [generated in 0.00027s] ('test@test.com', 1, 0)
+2022-05-01 20:03:17,578 [INFO] sqlalchemy.engine.Engine: INSERT INTO users (email, password, about, authenticated, registered_on) VALUES (?, ?, ?, ?, ?)
+2022-05-01 20:03:17,578 [INFO] sqlalchemy.engine.Engine: [generated in 0.00025s] ('test@test.com', 'pbkdf2:sha256:260000$mr3H0sg5Nv9uzhbr$9fb9aa87f5104c43c02d774d0b7338e1c266f4e12a38cbd241acd56cfbe19a33', None, 0, '2022-05-01 20:03:17.578182')
+2022-05-01 20:03:17,579 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:17,579 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:17,580 [INFO] sqlalchemy.engine.Engine: SELECT users.is_active AS users_is_active, users.id AS users_id, users.email AS users_email, users.password AS users_password, users.about AS users_about, users.authenticated AS users_authenticated, users.registered_on AS users_registered_on, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.id = ?
+2022-05-01 20:03:17,580 [INFO] sqlalchemy.engine.Engine: [generated in 0.00021s] (1,)
+2022-05-01 20:03:17,581 [INFO] sqlalchemy.engine.Engine: UPDATE users SET is_admin=? WHERE users.id = ?
+2022-05-01 20:03:17,581 [INFO] sqlalchemy.engine.Engine: [generated in 0.00023s] (1, 1)
+2022-05-01 20:03:17,581 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:17,594 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:17,595 [INFO] sqlalchemy.engine.Engine: SELECT users.is_active AS users_is_active, users.id AS users_id, users.email AS users_email, users.password AS users_password, users.about AS users_about, users.authenticated AS users_authenticated, users.registered_on AS users_registered_on, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.email = ?
+ LIMIT ? OFFSET ?
+2022-05-01 20:03:17,595 [INFO] sqlalchemy.engine.Engine: [cached since 0.0685s ago] ('test@test.com', 1, 0)
+2022-05-01 20:03:17,646 [INFO] sqlalchemy.engine.Engine: UPDATE users SET authenticated=? WHERE users.id = ?
+2022-05-01 20:03:17,647 [INFO] sqlalchemy.engine.Engine: [generated in 0.00026s] (1, 1)
+2022-05-01 20:03:17,647 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:17,647 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:17,648 [INFO] sqlalchemy.engine.Engine: SELECT users.is_active AS users_is_active, users.id AS users_id, users.email AS users_email, users.password AS users_password, users.about AS users_about, users.authenticated AS users_authenticated, users.registered_on AS users_registered_on, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.id = ?
+2022-05-01 20:03:17,648 [INFO] sqlalchemy.engine.Engine: [cached since 0.06795s ago] (1,)
+2022-05-01 20:03:17,651 [INFO] sqlalchemy.engine.Engine: ROLLBACK
+2022-05-01 20:03:17,660 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:17,660 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("song_user")
+2022-05-01 20:03:17,660 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,661 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("song_user")
+2022-05-01 20:03:17,661 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,661 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("songs")
+2022-05-01 20:03:17,661 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,662 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("songs")
+2022-05-01 20:03:17,662 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,662 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+2022-05-01 20:03:17,662 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,663 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("users")
+2022-05-01 20:03:17,663 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:17,663 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE songs (
+	id INTEGER NOT NULL, 
+	title VARCHAR(300), 
+	artist VARCHAR(300), 
+	year VARCHAR(50), 
+	genre VARCHAR(300), 
+	PRIMARY KEY (id)
+)
+
+
+2022-05-01 20:03:17,663 [INFO] sqlalchemy.engine.Engine: [no key 0.00022s] ()
+2022-05-01 20:03:17,664 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE users (
+	id INTEGER NOT NULL, 
+	email VARCHAR(120) NOT NULL, 
+	password VARCHAR(300) NOT NULL, 
+	about VARCHAR(300), 
+	authenticated BOOLEAN, 
+	registered_on DATETIME, 
+	is_active BOOLEAN DEFAULT '1' NOT NULL, 
+	is_admin BOOLEAN DEFAULT '0' NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (email), 
+	UNIQUE (password)
+)
+
+
+2022-05-01 20:03:17,664 [INFO] sqlalchemy.engine.Engine: [no key 0.00017s] ()
+2022-05-01 20:03:17,664 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE song_user (
+	user_id INTEGER, 
+	song_id INTEGER, 
+	FOREIGN KEY(user_id) REFERENCES users (id), 
+	FOREIGN KEY(song_id) REFERENCES songs (id)
+)
+
+
+2022-05-01 20:03:17,665 [INFO] sqlalchemy.engine.Engine: [no key 0.00017s] ()
+2022-05-01 20:03:17,665 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:17,773 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:17,774 [INFO] sqlalchemy.engine.Engine: SELECT users.is_active AS users_is_active, users.id AS users_id, users.email AS users_email, users.password AS users_password, users.about AS users_about, users.authenticated AS users_authenticated, users.registered_on AS users_registered_on, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.email = ?
+ LIMIT ? OFFSET ?
+2022-05-01 20:03:17,775 [INFO] sqlalchemy.engine.Engine: [generated in 0.00025s] ('test@test.com', 1, 0)
+2022-05-01 20:03:17,827 [INFO] sqlalchemy.engine.Engine: INSERT INTO users (email, password, about, authenticated, registered_on) VALUES (?, ?, ?, ?, ?)
+2022-05-01 20:03:17,827 [INFO] sqlalchemy.engine.Engine: [generated in 0.00026s] ('test@test.com', 'pbkdf2:sha256:260000$oiAC3yK4M04z4ott$69efe46c80e5dddf5d59d7818e64ac357963ac0a0d7217ab03ada5f6806a828c', None, 0, '2022-05-01 20:03:17.826510')
+2022-05-01 20:03:17,827 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:17,828 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:17,828 [INFO] sqlalchemy.engine.Engine: SELECT users.is_active AS users_is_active, users.id AS users_id, users.email AS users_email, users.password AS users_password, users.about AS users_about, users.authenticated AS users_authenticated, users.registered_on AS users_registered_on, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.id = ?
+2022-05-01 20:03:17,829 [INFO] sqlalchemy.engine.Engine: [generated in 0.00023s] (1,)
+2022-05-01 20:03:17,829 [INFO] sqlalchemy.engine.Engine: UPDATE users SET is_admin=? WHERE users.id = ?
+2022-05-01 20:03:17,830 [INFO] sqlalchemy.engine.Engine: [generated in 0.00021s] (1, 1)
+2022-05-01 20:03:17,830 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:17,843 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:17,843 [INFO] sqlalchemy.engine.Engine: SELECT users.is_active AS users_is_active, users.id AS users_id, users.email AS users_email, users.password AS users_password, users.about AS users_about, users.authenticated AS users_authenticated, users.registered_on AS users_registered_on, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.email = ?
+ LIMIT ? OFFSET ?
+2022-05-01 20:03:17,843 [INFO] sqlalchemy.engine.Engine: [cached since 0.06882s ago] ('test@test.com', 1, 0)
+2022-05-01 20:03:17,895 [INFO] sqlalchemy.engine.Engine: UPDATE users SET authenticated=? WHERE users.id = ?
+2022-05-01 20:03:17,896 [INFO] sqlalchemy.engine.Engine: [generated in 0.00023s] (1, 1)
+2022-05-01 20:03:17,896 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:17,896 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:17,897 [INFO] sqlalchemy.engine.Engine: SELECT users.is_active AS users_is_active, users.id AS users_id, users.email AS users_email, users.password AS users_password, users.about AS users_about, users.authenticated AS users_authenticated, users.registered_on AS users_registered_on, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.id = ?
+2022-05-01 20:03:17,897 [INFO] sqlalchemy.engine.Engine: [cached since 0.0684s ago] (1,)
+2022-05-01 20:03:17,903 [INFO] sqlalchemy.engine.Engine: SELECT users.is_active AS users_is_active, users.id AS users_id, users.email AS users_email, users.password AS users_password, users.about AS users_about, users.authenticated AS users_authenticated, users.registered_on AS users_registered_on, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.id = ?
+2022-05-01 20:03:17,903 [INFO] sqlalchemy.engine.Engine: [generated in 0.00025s] (1,)
+2022-05-01 20:03:17,943 [INFO] sqlalchemy.engine.Engine: SELECT users.is_active AS users_is_active, users.id AS users_id, users.email AS users_email, users.password AS users_password, users.about AS users_about, users.authenticated AS users_authenticated, users.registered_on AS users_registered_on, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.id = ?
+2022-05-01 20:03:17,943 [INFO] sqlalchemy.engine.Engine: [cached since 0.04046s ago] (1,)
+2022-05-01 20:03:17,959 [INFO] sqlalchemy.engine.Engine: SELECT songs.id AS songs_id, songs.title AS songs_title, songs.artist AS songs_artist, songs.year AS songs_year, songs.genre AS songs_genre 
+FROM songs, song_user 
+WHERE ? = song_user.user_id AND songs.id = song_user.song_id
+2022-05-01 20:03:17,960 [INFO] sqlalchemy.engine.Engine: [generated in 0.00023s] (1,)
+2022-05-01 20:03:17,981 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,981 [INFO] sqlalchemy.engine.Engine: [generated in 0.00022s] ('Down', 'Marian Hill', '2016', 'Electronic')
+2022-05-01 20:03:17,982 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,982 [INFO] sqlalchemy.engine.Engine: [cached since 0.0007743s ago] ('Sugar (feat. Francesco Yates)', 'Robin Schulz', '2015', 'Dance')
+2022-05-01 20:03:17,982 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,982 [INFO] sqlalchemy.engine.Engine: [cached since 0.001257s ago] ('Prayer In C (Robin Schulz Radio Edit)', 'Robin Schulz & Lilly Wood & The Prick', '2014', 'Dance')
+2022-05-01 20:03:17,982 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,983 [INFO] sqlalchemy.engine.Engine: [cached since 0.001714s ago] ('Crazy (feat. Joie Tan) [Radio Mix]', 'Teemid', '2014', 'Dance')
+2022-05-01 20:03:17,983 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,983 [INFO] sqlalchemy.engine.Engine: [cached since 0.002157s ago] ('Destiny', 'Zero 7', '2001', 'Electronic')
+2022-05-01 20:03:17,983 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,983 [INFO] sqlalchemy.engine.Engine: [cached since 0.002591s ago] ('Habits (Stay High)', 'Tove Lo', '2014', 'Alternative')
+2022-05-01 20:03:17,984 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,984 [INFO] sqlalchemy.engine.Engine: [cached since 0.00302s ago] ('This Is What You Came For (feat. Rihanna)', 'Calvin Harris', '2016', 'Dance')
+2022-05-01 20:03:17,984 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,984 [INFO] sqlalchemy.engine.Engine: [cached since 0.003528s ago] ('Feel so Close (Radio Edit)', 'Calvin Harris', '2012', 'Dance')
+2022-05-01 20:03:17,985 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,985 [INFO] sqlalchemy.engine.Engine: [cached since 0.003952s ago] ('1901', 'Phoenix', '2009', 'Rock')
+2022-05-01 20:03:17,985 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,985 [INFO] sqlalchemy.engine.Engine: [cached since 0.004375s ago] ('Me & Mr. Jones', 'Amy Winehouse', '2006', 'Soul/R&B')
+2022-05-01 20:03:17,986 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,986 [INFO] sqlalchemy.engine.Engine: [cached since 0.004849s ago] ('Walking On a Dream', 'Empire of the Sun', '2008', 'Electronic')
+2022-05-01 20:03:17,986 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,986 [INFO] sqlalchemy.engine.Engine: [cached since 0.005219s ago] ('High and Low', 'Empire of the Sun', '2016', 'Alternative')
+2022-05-01 20:03:17,986 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,987 [INFO] sqlalchemy.engine.Engine: [cached since 0.005594s ago] ('My Way', 'Calvin Harris', '2016', 'Dance')
+2022-05-01 20:03:17,987 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,987 [INFO] sqlalchemy.engine.Engine: [cached since 0.00603s ago] ('Seven Nation Army', 'The White Stripes', '2003', 'Alternative')
+2022-05-01 20:03:17,987 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,987 [INFO] sqlalchemy.engine.Engine: [cached since 0.006437s ago] ('Sugar', 'Maroon 5', '2014', 'Pop')
+2022-05-01 20:03:17,988 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,988 [INFO] sqlalchemy.engine.Engine: [cached since 0.006844s ago] ('Snowflakes (Radio Edit)', 'Robin Schulz & Pingpong', '2014', 'Dance')
+2022-05-01 20:03:17,988 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,988 [INFO] sqlalchemy.engine.Engine: [cached since 0.007241s ago] ('A Sky Full of Stars (Robin Schulz Edit)', 'Coldplay', '2014', 'Alternative')
+2022-05-01 20:03:17,988 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,989 [INFO] sqlalchemy.engine.Engine: [cached since 0.007625s ago] ('Crazy', 'Gnarls Barkley', '2006', 'Alternative')
+2022-05-01 20:03:17,989 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,989 [INFO] sqlalchemy.engine.Engine: [cached since 0.008027s ago] ('New Soul', 'Yael Naïm', '2007', 'Pop')
+2022-05-01 20:03:17,989 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,989 [INFO] sqlalchemy.engine.Engine: [cached since 0.008423s ago] ('Animal (Mark Ronson Remix)', 'Miike Snow', '2009', 'Alternative')
+2022-05-01 20:03:17,990 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,990 [INFO] sqlalchemy.engine.Engine: [cached since 0.008811s ago] ('Treasure', 'Bruno Mars', '2013', 'Pop')
+2022-05-01 20:03:17,990 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,990 [INFO] sqlalchemy.engine.Engine: [cached since 0.009222s ago] ("This Girl (Kungs Vs. Cookin' On 3 Burners)", "Kungs & Cookin' On 3 Burners", '2016', 'Electronic')
+2022-05-01 20:03:17,990 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,991 [INFO] sqlalchemy.engine.Engine: [cached since 0.009641s ago] ('Landscape', 'Robert Miles', '1992', 'Pop')
+2022-05-01 20:03:17,991 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,991 [INFO] sqlalchemy.engine.Engine: [cached since 0.0101s ago] ('Conga Fury', 'Juno Reactor', '1997', 'Electronic')
+2022-05-01 20:03:17,991 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,991 [INFO] sqlalchemy.engine.Engine: [cached since 0.01051s ago] ("Can't Feel My Face", 'The Weeknd', '2015', 'R&B/Soul')
+2022-05-01 20:03:17,992 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,992 [INFO] sqlalchemy.engine.Engine: [cached since 0.01091s ago] ('Kansas City', 'The New Basement Tapes', '2014', 'Alternative')
+2022-05-01 20:03:17,992 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,992 [INFO] sqlalchemy.engine.Engine: [cached since 0.0113s ago] ('Did You Hear the Rain?', 'George Ezra', '2015', 'Singer/Songwriter')
+2022-05-01 20:03:17,992 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,993 [INFO] sqlalchemy.engine.Engine: [cached since 0.01171s ago] ('Budapest', 'George Ezra', '2014', 'Singer/Songwriter')
+2022-05-01 20:03:17,993 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,993 [INFO] sqlalchemy.engine.Engine: [cached since 0.0121s ago] ('Barcelona', 'George Ezra', '2015', 'Singer/Songwriter')
+2022-05-01 20:03:17,993 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,993 [INFO] sqlalchemy.engine.Engine: [cached since 0.01252s ago] ('Shape of You', 'Ed Sheeran', '2017', 'Pop')
+2022-05-01 20:03:17,994 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,994 [INFO] sqlalchemy.engine.Engine: [cached since 0.01293s ago] ('Elementary Particles (re-edit)', 'Bluetech', '2005', 'General Dance')
+2022-05-01 20:03:17,994 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,994 [INFO] sqlalchemy.engine.Engine: [cached since 0.01334s ago] ('Misery Business', 'Paramore', '2007', 'Alternative')
+2022-05-01 20:03:17,995 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,995 [INFO] sqlalchemy.engine.Engine: [cached since 0.01376s ago] ('Black & Gold (Marcussen Album Version)', 'Sam Sparro', '', 'Pop')
+2022-05-01 20:03:17,995 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,995 [INFO] sqlalchemy.engine.Engine: [cached since 0.01415s ago] ('Postcards from Hell', 'The Wood Brothers', '2008', 'Singer/Songwriter')
+2022-05-01 20:03:17,995 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,995 [INFO] sqlalchemy.engine.Engine: [cached since 0.01454s ago] ('Elephant Machine', 'Younger Brother', '2007', 'Electronic')
+2022-05-01 20:03:17,996 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,996 [INFO] sqlalchemy.engine.Engine: [cached since 0.01494s ago] ('Carnival', 'Natalie Merchant', '1995', 'Rock')
+2022-05-01 20:03:17,996 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,996 [INFO] sqlalchemy.engine.Engine: [cached since 0.01533s ago] ('L.A. Song', 'Beth Hart', '2005', 'Rock')
+2022-05-01 20:03:17,997 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,997 [INFO] sqlalchemy.engine.Engine: [cached since 0.01577s ago] ('Wonderwall', 'Ryan Adams', '1991', 'Rock')
+2022-05-01 20:03:17,997 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,997 [INFO] sqlalchemy.engine.Engine: [cached since 0.01617s ago] ('Art Of Motion', 'Andy McKee', '2005', 'Instrumental Rock')
+2022-05-01 20:03:17,997 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,998 [INFO] sqlalchemy.engine.Engine: [cached since 0.0166s ago] ('Drifting', 'Andy McKee', '2005', 'Instrumental Rock')
+2022-05-01 20:03:17,998 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,998 [INFO] sqlalchemy.engine.Engine: [cached since 0.01702s ago] ('Cello Suite No. 1 in G Major, BWV 1007: I. Prélude', 'Yo-Yo Ma', '1997', 'Classical')
+2022-05-01 20:03:17,998 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,998 [INFO] sqlalchemy.engine.Engine: [cached since 0.01756s ago] ('Just Give Me a Reason (feat. Nate Ruess)', 'P!nk', '2012', 'Pop')
+2022-05-01 20:03:17,999 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,999 [INFO] sqlalchemy.engine.Engine: [cached since 0.01792s ago] ('Get Lucky (feat. Pharrell Williams & Nile Rodgers)', 'Daft Punk', '2013', 'Pop')
+2022-05-01 20:03:17,999 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:17,999 [INFO] sqlalchemy.engine.Engine: [cached since 0.01834s ago] ('Good Times', 'Chic', '1979', 'R&B/Soul')
+2022-05-01 20:03:18,000 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,000 [INFO] sqlalchemy.engine.Engine: [cached since 0.01874s ago] ('Give Me the Night', 'George Benson', '1980', 'Jazz')
+2022-05-01 20:03:18,000 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,000 [INFO] sqlalchemy.engine.Engine: [cached since 0.01912s ago] ('The Girl from Ipanema (feat. Astrud Gilberto & Antônio Carlos Jobim) [Single Version]', 'Stan Getz & João Gilberto', '1964', 'Jazz')
+2022-05-01 20:03:18,000 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,000 [INFO] sqlalchemy.engine.Engine: [cached since 0.01955s ago] ('How to Save a Life', 'The Fray', '2005', 'Pop')
+2022-05-01 20:03:18,001 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,001 [INFO] sqlalchemy.engine.Engine: [cached since 0.01995s ago] ('Mo Money Mo Problems (feat. Mase & Puff Daddy) [2014 Remastered Version]', 'The Notorious B.I.G.', '1997', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,001 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,001 [INFO] sqlalchemy.engine.Engine: [cached since 0.02036s ago] ('Juicy', 'The Notorious B.I.G.', '1994', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,001 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,002 [INFO] sqlalchemy.engine.Engine: [cached since 0.02072s ago] ('Big Poppa', 'The Notorious B.I.G.', '1994', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,002 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,002 [INFO] sqlalchemy.engine.Engine: [cached since 0.02108s ago] ('Hypnotize', 'The Notorious B.I.G.', '1997', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,002 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,002 [INFO] sqlalchemy.engine.Engine: [cached since 0.02145s ago] ('Fancy (feat. Charli XCX)', 'Iggy Azalea', '2014', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,003 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,003 [INFO] sqlalchemy.engine.Engine: [cached since 0.02185s ago] ('Rockabye (feat. Sean Paul & Anne-Marie)', 'Clean Bandit', '2016', 'Dance')
+2022-05-01 20:03:18,003 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,003 [INFO] sqlalchemy.engine.Engine: [cached since 0.02224s ago] ("There's Nothing Holdin' Me Back", 'Shawn Mendes', '2016', 'Pop')
+2022-05-01 20:03:18,003 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,004 [INFO] sqlalchemy.engine.Engine: [cached since 0.02265s ago] ('Little Red Corvette (2019 Remaster)', 'Prince', '2019', 'R&B/Soul')
+2022-05-01 20:03:18,004 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,004 [INFO] sqlalchemy.engine.Engine: [cached since 0.02308s ago] ('Love the Way You Lie (feat. Rihanna)', 'Eminem', '2010', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,004 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,004 [INFO] sqlalchemy.engine.Engine: [cached since 0.02354s ago] ('Guaranteed', 'Eddie Vedder', '2007', 'Rock')
+2022-05-01 20:03:18,005 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,005 [INFO] sqlalchemy.engine.Engine: [cached since 0.02396s ago] ('Otherside', 'The Red Hot Chili Peppers', '1998', 'Pop')
+2022-05-01 20:03:18,005 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,005 [INFO] sqlalchemy.engine.Engine: [cached since 0.02439s ago] ('California Love', '2Pac', '2009', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,006 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,006 [INFO] sqlalchemy.engine.Engine: [cached since 0.0248s ago] ('Scar Tissue', 'Red Hot Chili Peppers', '1999', 'Alternative')
+2022-05-01 20:03:18,006 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,006 [INFO] sqlalchemy.engine.Engine: [cached since 0.02528s ago] ('Passionfruit', 'Drake', '2017', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,006 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,007 [INFO] sqlalchemy.engine.Engine: [cached since 0.0257s ago] ('Friends', 'Justin Bieber & BloodPop®', '2017', 'Pop')
+2022-05-01 20:03:18,007 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,007 [INFO] sqlalchemy.engine.Engine: [cached since 0.02612s ago] ('Feel It Still', 'Portugal. The Man', '2017', 'Alternative')
+2022-05-01 20:03:18,007 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,007 [INFO] sqlalchemy.engine.Engine: [cached since 0.02652s ago] ('Purple Yellow Red and Blue', 'Portugal. The Man', '2013', 'Alternative')
+2022-05-01 20:03:18,008 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,008 [INFO] sqlalchemy.engine.Engine: [cached since 0.02692s ago] ('Sorry Not Sorry (Acoustic)', 'Demi Lovato', '2017', 'Pop')
+2022-05-01 20:03:18,008 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,008 [INFO] sqlalchemy.engine.Engine: [cached since 0.02731s ago] ('Pumped Up Kicks', 'Foster the People', '2011', 'Alternative')
+2022-05-01 20:03:18,008 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,009 [INFO] sqlalchemy.engine.Engine: [cached since 0.0277s ago] ('Cabin by the Sea', 'Dirty Heads', '2012', 'Alternative')
+2022-05-01 20:03:18,009 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,009 [INFO] sqlalchemy.engine.Engine: [cached since 0.02815s ago] ('How Long', 'Charlie Puth', '2017', 'Pop')
+2022-05-01 20:03:18,009 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,009 [INFO] sqlalchemy.engine.Engine: [cached since 0.02857s ago] ('Attention', 'Charlie Puth', '2017', 'Pop')
+2022-05-01 20:03:18,010 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,010 [INFO] sqlalchemy.engine.Engine: [cached since 0.029s ago] ('Mercy (Acoustic)', 'Shawn Mendes', '2016', 'Pop')
+2022-05-01 20:03:18,010 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,010 [INFO] sqlalchemy.engine.Engine: [cached since 0.02943s ago] ('Strip That Down (feat. Quavo)', 'Liam Payne', '2017', 'Pop')
+2022-05-01 20:03:18,011 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,011 [INFO] sqlalchemy.engine.Engine: [cached since 0.02986s ago] ('Wild Thoughts (feat. Rihanna & Bryson Tiller)', 'DJ Khaled', '2017', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,011 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,011 [INFO] sqlalchemy.engine.Engine: [cached since 0.03033s ago] ('Pizza', 'Martin Garrix', '2017', 'Dance')
+2022-05-01 20:03:18,011 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,012 [INFO] sqlalchemy.engine.Engine: [cached since 0.03074s ago] ('Paradinha', 'Anitta', '2017', 'Brazilian')
+2022-05-01 20:03:18,012 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,012 [INFO] sqlalchemy.engine.Engine: [cached since 0.03114s ago] ('The Heart Wants What It Wants', 'Selena Gomez', '2014', 'Pop')
+2022-05-01 20:03:18,012 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,012 [INFO] sqlalchemy.engine.Engine: [cached since 0.03156s ago] ('Saturday Night (Heart On Drugs)', 'Tree Thomas', '2017', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,013 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,013 [INFO] sqlalchemy.engine.Engine: [cached since 0.03198s ago] ('Fireball (feat. John Ryan)', 'Pitbull', '2014', 'Pop')
+2022-05-01 20:03:18,013 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,013 [INFO] sqlalchemy.engine.Engine: [cached since 0.03239s ago] ('G Code', 'Geto Boys', '2005', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,014 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,014 [INFO] sqlalchemy.engine.Engine: [cached since 0.0328s ago] ('Apologize', 'OneRepublic', '2006', 'Pop')
+2022-05-01 20:03:18,014 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,014 [INFO] sqlalchemy.engine.Engine: [cached since 0.03321s ago] ('Too Good at Goodbyes', 'Sam Smith', '2017', 'Pop')
+2022-05-01 20:03:18,014 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,015 [INFO] sqlalchemy.engine.Engine: [cached since 0.03361s ago] ('Stash', 'Phish', '1992', 'Rock')
+2022-05-01 20:03:18,015 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,015 [INFO] sqlalchemy.engine.Engine: [cached since 0.03401s ago] ("It Ain't Me", 'Kygo & Selena Gomez', '2017', 'Pop')
+2022-05-01 20:03:18,015 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,015 [INFO] sqlalchemy.engine.Engine: [cached since 0.03441s ago] ('Kiss You All Over', 'Exile', '1985', 'Country')
+2022-05-01 20:03:18,016 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,016 [INFO] sqlalchemy.engine.Engine: [cached since 0.03479s ago] ('Cake by the Ocean', 'DNCE', '2016', 'Pop')
+2022-05-01 20:03:18,016 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,016 [INFO] sqlalchemy.engine.Engine: [cached since 0.03516s ago] ('Apologize', 'OneRepublic', '2006', 'Pop')
+2022-05-01 20:03:18,016 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,016 [INFO] sqlalchemy.engine.Engine: [cached since 0.03553s ago] ('Power Trip (feat. Miguel)', 'J. Cole', '2013', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,017 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,017 [INFO] sqlalchemy.engine.Engine: [cached since 0.03589s ago] ('Down the Road', 'C2C', '2012', 'Electronic')
+2022-05-01 20:03:18,017 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,017 [INFO] sqlalchemy.engine.Engine: [cached since 0.03627s ago] ('Good Times Roll', 'GRiZ & Big Gigantic', '2015', 'Electronic')
+2022-05-01 20:03:18,017 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,018 [INFO] sqlalchemy.engine.Engine: [cached since 0.03668s ago] ('A Fine Way to Die (feat. Orlando Napier)', 'GRiZ', '2015', 'Electronic')
+2022-05-01 20:03:18,018 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,018 [INFO] sqlalchemy.engine.Engine: [cached since 0.03712s ago] ('New Rules', 'Dua Lipa', '2017', 'Pop')
+2022-05-01 20:03:18,018 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,018 [INFO] sqlalchemy.engine.Engine: [cached since 0.03755s ago] ('Keep Your Head', "David O'Dowda", '2015', 'Alternative')
+2022-05-01 20:03:18,019 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,019 [INFO] sqlalchemy.engine.Engine: [cached since 0.03796s ago] ('Classical Gas', 'Mason Williams', '1968', 'Rock')
+2022-05-01 20:03:18,019 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,019 [INFO] sqlalchemy.engine.Engine: [cached since 0.03835s ago] ('Good Old Days (feat. Kesha)', 'Macklemore', '2017', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,020 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,020 [INFO] sqlalchemy.engine.Engine: [cached since 0.03876s ago] ('Baby, What a Big Surprise', 'Chicago', '1977', 'Rock')
+2022-05-01 20:03:18,020 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,020 [INFO] sqlalchemy.engine.Engine: [cached since 0.03915s ago] ('Urgent', 'Foreigner', '1981', 'Rock')
+2022-05-01 20:03:18,020 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,020 [INFO] sqlalchemy.engine.Engine: [cached since 0.03957s ago] ('Superman', 'Eminem', '2002', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,021 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,021 [INFO] sqlalchemy.engine.Engine: [cached since 0.03994s ago] ('Wait (feat. A Boogie wit da Hoodie)', 'Maroon 5', '2018', 'Pop')
+2022-05-01 20:03:18,021 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,021 [INFO] sqlalchemy.engine.Engine: [cached since 0.04036s ago] ('Superman', 'Eminem', '2002', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,022 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,022 [INFO] sqlalchemy.engine.Engine: [cached since 0.04076s ago] ('To My Love (Tainy Remix)', 'Bomba Estéreo', '2016', 'Pop Latino')
+2022-05-01 20:03:18,022 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,022 [INFO] sqlalchemy.engine.Engine: [cached since 0.04117s ago] ('Pray For Me', 'The Weeknd, Kendrick Lamar', '2018', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,022 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,023 [INFO] sqlalchemy.engine.Engine: [cached since 0.0416s ago] ('Heathens (feat. MUTEMATH)', 'twenty one pilots', '2016', 'Alternative')
+2022-05-01 20:03:18,023 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,023 [INFO] sqlalchemy.engine.Engine: [cached since 0.042s ago] ('Devil in Me (feat. Joe Killington & Duane Harden)', 'Purple Disco Machine', '2017', 'House')
+2022-05-01 20:03:18,023 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,023 [INFO] sqlalchemy.engine.Engine: [cached since 0.04245s ago] ('Pray For Me', 'The Weeknd, Kendrick Lamar', '2018', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,024 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,024 [INFO] sqlalchemy.engine.Engine: [cached since 0.04284s ago] ('Sunny', 'Bobby Hebb', '1966', 'Pop')
+2022-05-01 20:03:18,024 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,024 [INFO] sqlalchemy.engine.Engine: [cached since 0.0432s ago] ('Bread', 'Bobby Hebb', '1966', 'Pop')
+2022-05-01 20:03:18,024 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,025 [INFO] sqlalchemy.engine.Engine: [cached since 0.04364s ago] ('Love Me Again', 'John Newman', '2013', 'Pop')
+2022-05-01 20:03:18,025 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,025 [INFO] sqlalchemy.engine.Engine: [cached since 0.04401s ago] ('Africa', 'Weezer', '2018', 'Alternative')
+2022-05-01 20:03:18,025 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,025 [INFO] sqlalchemy.engine.Engine: [cached since 0.04442s ago] ('Believer', 'Imagine Dragons', '2017', 'Alternative')
+2022-05-01 20:03:18,026 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,026 [INFO] sqlalchemy.engine.Engine: [cached since 0.04482s ago] ('Thunder', 'Imagine Dragons', '2018', 'Alternative')
+2022-05-01 20:03:18,026 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,026 [INFO] sqlalchemy.engine.Engine: [cached since 0.04523s ago] ('Bad at Love', 'Halsey', '2017', 'Alternative')
+2022-05-01 20:03:18,026 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,027 [INFO] sqlalchemy.engine.Engine: [cached since 0.04564s ago] ('Summertime Sadness', 'Lana Del Rey', '2012', 'Alternative')
+2022-05-01 20:03:18,027 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,027 [INFO] sqlalchemy.engine.Engine: [cached since 0.04605s ago] ('The Hills', 'The Weeknd', '2015', 'R&B/Soul')
+2022-05-01 20:03:18,027 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,027 [INFO] sqlalchemy.engine.Engine: [cached since 0.04644s ago] ('Wonderwall (Remastered)', 'Oasis', '1995', 'Indie Rock')
+2022-05-01 20:03:18,028 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,028 [INFO] sqlalchemy.engine.Engine: [cached since 0.0468s ago] ('Dani California', 'Red Hot Chili Peppers', '2006', 'Alternative')
+2022-05-01 20:03:18,028 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,028 [INFO] sqlalchemy.engine.Engine: [cached since 0.04717s ago] ('Skating Away (On the Thin Ice of the New Day)', 'Jethro Tull', '1974', 'Prog-Rock/Art Rock')
+2022-05-01 20:03:18,028 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,028 [INFO] sqlalchemy.engine.Engine: [cached since 0.04759s ago] ('Spanish Harlem', 'Ben E. King', '1960', 'R&B/Soul')
+2022-05-01 20:03:18,029 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,029 [INFO] sqlalchemy.engine.Engine: [cached since 0.04796s ago] ('Let Me Love You (feat. Justin Bieber)', 'DJ Snake', '2016', 'Dance')
+2022-05-01 20:03:18,029 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,029 [INFO] sqlalchemy.engine.Engine: [cached since 0.04839s ago] ("Can't Hold Us (feat. Ray Dalton)", 'Macklemore & Ryan Lewis', '2011', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,030 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,030 [INFO] sqlalchemy.engine.Engine: [cached since 0.04876s ago] ('Take on Me', 'Weezer', '2019', 'Alternative')
+2022-05-01 20:03:18,030 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,030 [INFO] sqlalchemy.engine.Engine: [cached since 0.04916s ago] ('Blurred Lines (feat. T.I. & Pharrell)', 'Robin Thicke', '2013', 'Pop')
+2022-05-01 20:03:18,030 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,031 [INFO] sqlalchemy.engine.Engine: [cached since 0.04959s ago] ('Thrift Shop (feat. Wanz)', 'Macklemore & Ryan Lewis', '2012', 'Hip-Hop')
+2022-05-01 20:03:18,031 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,031 [INFO] sqlalchemy.engine.Engine: [cached since 0.05009s ago] ('Apologize (feat. OneRepublic)', 'Timbaland', '2007', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,031 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,031 [INFO] sqlalchemy.engine.Engine: [cached since 0.05051s ago] ('Ms. Jackson', 'Outkast', '2000', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,032 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,032 [INFO] sqlalchemy.engine.Engine: [cached since 0.05092s ago] ('50 Ways to Leave Your Lover', 'Paul Simon', '1975', 'Singer/Songwriter')
+2022-05-01 20:03:18,032 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,032 [INFO] sqlalchemy.engine.Engine: [cached since 0.05132s ago] ('I Just Want To Be Your Everything', 'Andy Gibb', '1977', 'Pop')
+2022-05-01 20:03:18,032 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,033 [INFO] sqlalchemy.engine.Engine: [cached since 0.05169s ago] ('Love Yourself', 'Justin Bieber', '2015', 'Pop')
+2022-05-01 20:03:18,033 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,033 [INFO] sqlalchemy.engine.Engine: [cached since 0.05205s ago] ('Get Busy', 'Sean Paul', '2002', 'Pop')
+2022-05-01 20:03:18,033 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,033 [INFO] sqlalchemy.engine.Engine: [cached since 0.05243s ago] ('Lights', 'Ellie Goulding', '2010', 'Pop')
+2022-05-01 20:03:18,034 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,034 [INFO] sqlalchemy.engine.Engine: [cached since 0.05279s ago] ('Say Say Say', 'Paul McCartney & Michael Jackson', '1983', 'Pop')
+2022-05-01 20:03:18,034 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,034 [INFO] sqlalchemy.engine.Engine: [cached since 0.05315s ago] ('Outro', 'M83', '2011', 'Electronic')
+2022-05-01 20:03:18,034 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,034 [INFO] sqlalchemy.engine.Engine: [cached since 0.05356s ago] ("It's Too Late", 'Carole King', '1971', 'Singer/Songwriter')
+2022-05-01 20:03:18,035 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,035 [INFO] sqlalchemy.engine.Engine: [cached since 0.05396s ago] ('Lisztomania', 'Phoenix', '2009', 'Rock')
+2022-05-01 20:03:18,035 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,035 [INFO] sqlalchemy.engine.Engine: [cached since 0.05436s ago] ('Bad Liar', 'Selena Gomez', '2017', 'Pop')
+2022-05-01 20:03:18,036 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,036 [INFO] sqlalchemy.engine.Engine: [cached since 0.05477s ago] ('Kryptonite', 'DJ Crazy J Rodriguez', '2018', 'Rock')
+2022-05-01 20:03:18,036 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,036 [INFO] sqlalchemy.engine.Engine: [cached since 0.05516s ago] ('Shame', 'Evelyn "Champagne" King', '2000', 'R&B/Soul')
+2022-05-01 20:03:18,036 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,037 [INFO] sqlalchemy.engine.Engine: [cached since 0.0556s ago] ('Disco Inferno (Single Edit)', 'The Trammps', '2005', 'R&B/Soul')
+2022-05-01 20:03:18,037 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,037 [INFO] sqlalchemy.engine.Engine: [cached since 0.05597s ago] ('Get Up I Feel Like Being Like A Sex Machine (Pts. 1 & 2)', 'James Brown', '1991', 'Funk')
+2022-05-01 20:03:18,037 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,037 [INFO] sqlalchemy.engine.Engine: [cached since 0.05645s ago] ("Papa's Got a Brand New Bag, Pt. 1", 'James Brown & The Famous Flames', '1965', 'R&B/Soul')
+2022-05-01 20:03:18,038 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,038 [INFO] sqlalchemy.engine.Engine: [cached since 0.05684s ago] ('You Dropped a Bomb on Me', 'The Gap Band', '1985', 'R&B/Soul')
+2022-05-01 20:03:18,038 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,038 [INFO] sqlalchemy.engine.Engine: [cached since 0.05721s ago] ('Shining Star', 'Earth, Wind & Fire', '1975', 'R&B/Soul')
+2022-05-01 20:03:18,038 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,039 [INFO] sqlalchemy.engine.Engine: [cached since 0.05762s ago] ('I Ran (So Far Away)', 'A Flock of Seagulls', '1982', 'Pop')
+2022-05-01 20:03:18,039 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,039 [INFO] sqlalchemy.engine.Engine: [cached since 0.05801s ago] ('Englishman In New York', 'Sting', '1987', 'Rock')
+2022-05-01 20:03:18,039 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,039 [INFO] sqlalchemy.engine.Engine: [cached since 0.0584s ago] ('Close to Me', 'Ellie Goulding, Diplo & Swae Lee', '2018', 'Pop')
+2022-05-01 20:03:18,040 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,040 [INFO] sqlalchemy.engine.Engine: [cached since 0.05881s ago] ("Brandy (You're A Fine Girl)", 'Looking Glass', '1972', 'Pop')
+2022-05-01 20:03:18,040 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,040 [INFO] sqlalchemy.engine.Engine: [cached since 0.0592s ago] ("Don't You (Forget About Me)", 'Simple Minds', '1985', 'Rock')
+2022-05-01 20:03:18,040 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,041 [INFO] sqlalchemy.engine.Engine: [cached since 0.05967s ago] ('Evil Ways', 'Santana', '2007', 'Rock')
+2022-05-01 20:03:18,041 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,041 [INFO] sqlalchemy.engine.Engine: [cached since 0.06006s ago] ('Everybody Wants to Rule the World', 'Weezer', '2019', 'Alternative')
+2022-05-01 20:03:18,041 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,041 [INFO] sqlalchemy.engine.Engine: [cached since 0.06042s ago] ('Sweet Dreams (Are Made of This)', 'Weezer', '2019', 'Alternative')
+2022-05-01 20:03:18,042 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,042 [INFO] sqlalchemy.engine.Engine: [cached since 0.06076s ago] ('Take on Me', 'Weezer', '2019', 'Alternative')
+2022-05-01 20:03:18,042 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,042 [INFO] sqlalchemy.engine.Engine: [cached since 0.06113s ago] ('Happy Together', 'Weezer', '2019', 'Alternative')
+2022-05-01 20:03:18,042 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,042 [INFO] sqlalchemy.engine.Engine: [cached since 0.06152s ago] ('Billie Jean', 'Weezer', '2019', 'Alternative')
+2022-05-01 20:03:18,043 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,043 [INFO] sqlalchemy.engine.Engine: [cached since 0.0619s ago] ('Paranoid', 'Weezer', '2019', 'Alternative')
+2022-05-01 20:03:18,043 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,043 [INFO] sqlalchemy.engine.Engine: [cached since 0.06231s ago] ('Africa', 'Weezer', '2018', 'Alternative')
+2022-05-01 20:03:18,043 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,044 [INFO] sqlalchemy.engine.Engine: [cached since 0.06276s ago] ('Shallow', 'Lady Gaga & Bradley Cooper', '2018', 'Soundtrack')
+2022-05-01 20:03:18,044 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,044 [INFO] sqlalchemy.engine.Engine: [cached since 0.06314s ago] ('Harder Better Faster Stronger', 'Daft Punk', '2001', 'Dance')
+2022-05-01 20:03:18,044 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,044 [INFO] sqlalchemy.engine.Engine: [cached since 0.06355s ago] ('Meant to Be', 'Bebe Rexha & Florida Georgia Line', '2017', 'Pop')
+2022-05-01 20:03:18,045 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,045 [INFO] sqlalchemy.engine.Engine: [cached since 0.06394s ago] ('365', 'Zedd & Katy Perry', '2019', 'Dance')
+2022-05-01 20:03:18,045 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,045 [INFO] sqlalchemy.engine.Engine: [cached since 0.06439s ago] ('Nevermind', 'Dennis Lloyd', '2016', 'Pop')
+2022-05-01 20:03:18,046 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,046 [INFO] sqlalchemy.engine.Engine: [cached since 0.06481s ago] ('Thunderclouds (feat. Sia, Diplo & Labrinth)', 'LSD', '2018', 'Pop')
+2022-05-01 20:03:18,046 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,046 [INFO] sqlalchemy.engine.Engine: [cached since 0.06521s ago] ('Revival (Original Mix)', 'JCdG', '2012', 'Dance')
+2022-05-01 20:03:18,046 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,047 [INFO] sqlalchemy.engine.Engine: [cached since 0.06561s ago] ('Burn', 'Ellie Goulding', '2013', 'Pop')
+2022-05-01 20:03:18,047 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,047 [INFO] sqlalchemy.engine.Engine: [cached since 0.06601s ago] ('Sweet Dreams (Are Made of This)', 'Eurythmics', '1983', 'Alternative')
+2022-05-01 20:03:18,047 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,047 [INFO] sqlalchemy.engine.Engine: [cached since 0.0664s ago] ('Relax', 'Frankie Goes to Hollywood', '1983', 'Pop')
+2022-05-01 20:03:18,048 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,048 [INFO] sqlalchemy.engine.Engine: [cached since 0.06683s ago] ('Con Calma (feat. Snow)', 'Daddy Yankee', '2018', 'Urbano latino')
+2022-05-01 20:03:18,048 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,048 [INFO] sqlalchemy.engine.Engine: [cached since 0.06724s ago] ('Krippy Kush (Travis Scott Remix) [feat. Travis Scott & Rvssian]', 'Farruko, Nicki Minaj & Bad Bunny', '2017', 'Urbano latino')
+2022-05-01 20:03:18,048 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,049 [INFO] sqlalchemy.engine.Engine: [cached since 0.06765s ago] ('I Just Want To Be Your Everything', 'Andy Gibb', '1977', 'Pop')
+2022-05-01 20:03:18,049 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,049 [INFO] sqlalchemy.engine.Engine: [cached since 0.06807s ago] ('Beat It (Single Version)', 'Michael Jackson', '1982', 'Pop')
+2022-05-01 20:03:18,049 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,049 [INFO] sqlalchemy.engine.Engine: [cached since 0.06848s ago] ('Until the End of Time (feat. Richard Page) [RP Remix]', '2Pac', '2001', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,050 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,050 [INFO] sqlalchemy.engine.Engine: [cached since 0.06886s ago] ('The City Is Mine (feat. Blackstreet)', 'JAY-Z', '1997', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,050 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,050 [INFO] sqlalchemy.engine.Engine: [cached since 0.06931s ago] ('Lost in the Fire', 'Gesaffelstein & The Weeknd', '2019', 'Electronic')
+2022-05-01 20:03:18,051 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,051 [INFO] sqlalchemy.engine.Engine: [cached since 0.06979s ago] ('Sweet but Psycho', 'Ava Max', '2018', 'Pop')
+2022-05-01 20:03:18,051 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,051 [INFO] sqlalchemy.engine.Engine: [cached since 0.0702s ago] ('Chandelier', 'Sia', '2014', 'Pop')
+2022-05-01 20:03:18,051 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,052 [INFO] sqlalchemy.engine.Engine: [cached since 0.07061s ago] ("I'm Going Down (iTunes Session)", 'Vampire Weekend', '2010', 'Alternative')
+2022-05-01 20:03:18,052 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,052 [INFO] sqlalchemy.engine.Engine: [cached since 0.07101s ago] ('You Found Me', 'The Fray', '2008', 'Rock')
+2022-05-01 20:03:18,052 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,052 [INFO] sqlalchemy.engine.Engine: [cached since 0.07143s ago] ('Just One Yesterday (feat. Foxes)', 'Fall Out Boy', '2013', 'Alternative')
+2022-05-01 20:03:18,053 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,053 [INFO] sqlalchemy.engine.Engine: [cached since 0.0718s ago] ('Pittsburgh Makes Me Drunk', 'Ceann', '2007', 'Rock')
+2022-05-01 20:03:18,053 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,053 [INFO] sqlalchemy.engine.Engine: [cached since 0.07219s ago] ("I'm Going Down (iTunes Session)", 'Vampire Weekend', '2010', 'Alternative')
+2022-05-01 20:03:18,053 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,054 [INFO] sqlalchemy.engine.Engine: [cached since 0.07261s ago] ('In My Mind', "Dynoro & Gigi D'Agostino", '2017', 'Dance')
+2022-05-01 20:03:18,054 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,054 [INFO] sqlalchemy.engine.Engine: [cached since 0.07304s ago] ('You Found Me', 'The Fray', '2008', 'Rock')
+2022-05-01 20:03:18,054 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,054 [INFO] sqlalchemy.engine.Engine: [cached since 0.07346s ago] ('La Grange', 'ZZ Top', '1973', 'Rock')
+2022-05-01 20:03:18,055 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,055 [INFO] sqlalchemy.engine.Engine: [cached since 0.07388s ago] ("Day 'n' Nite", 'Kid Cudi', '2008', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,055 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,055 [INFO] sqlalchemy.engine.Engine: [cached since 0.07425s ago] ('Cola', 'CamelPhat & Elderbrook', '2017', 'Dance')
+2022-05-01 20:03:18,055 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,056 [INFO] sqlalchemy.engine.Engine: [cached since 0.07465s ago] ('Bad Liar', 'Imagine Dragons', '2018', 'Alternative')
+2022-05-01 20:03:18,056 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,056 [INFO] sqlalchemy.engine.Engine: [cached since 0.07506s ago] ('Purple Emoji (feat. J. Cole)', 'Ty Dolla $ign', '2019', 'R&B/Soul')
+2022-05-01 20:03:18,056 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,056 [INFO] sqlalchemy.engine.Engine: [cached since 0.07547s ago] ('Run Wild Run Free', 'Zacari', '2019', 'R&B/Soul')
+2022-05-01 20:03:18,057 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,057 [INFO] sqlalchemy.engine.Engine: [cached since 0.07587s ago] ('Lucid Dreams', 'Juice WRLD', '2017', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,057 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,057 [INFO] sqlalchemy.engine.Engine: [cached since 0.07634s ago] ('Satisfaction (Isak Original)', 'Benny Benassi & The Biz', '2010', 'Dance')
+2022-05-01 20:03:18,058 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,058 [INFO] sqlalchemy.engine.Engine: [cached since 0.07677s ago] ('World Hold On', 'Steve Edwards & Bob Sinclar', '2010', 'Dance')
+2022-05-01 20:03:18,058 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,058 [INFO] sqlalchemy.engine.Engine: [cached since 0.07718s ago] ('Mambo No. 5 (A Little Bit Of...)', 'Lou Bega', '1999', 'Pop')
+2022-05-01 20:03:18,058 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,059 [INFO] sqlalchemy.engine.Engine: [cached since 0.07759s ago] ('Firestone', 'Am7', '2015', 'Dance')
+2022-05-01 20:03:18,059 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,059 [INFO] sqlalchemy.engine.Engine: [cached since 0.078s ago] ('Touch My Body (Seamus Haji & Paul Emanuel Club Mix)', 'Mariah Carey', '2008', 'Dance')
+2022-05-01 20:03:18,059 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,059 [INFO] sqlalchemy.engine.Engine: [cached since 0.07843s ago] ('Taki Taki (feat. Seba Bootleg)', 'Jona Mix', '2018', 'Urbano latino')
+2022-05-01 20:03:18,060 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,060 [INFO] sqlalchemy.engine.Engine: [cached since 0.07882s ago] ('Fireball (feat. John Ryan)', 'Pitbull', '2014', 'Pop')
+2022-05-01 20:03:18,060 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,060 [INFO] sqlalchemy.engine.Engine: [cached since 0.0792s ago] ('One Kiss', 'Calvin Harris, Dua Lipa', '2018', 'Dance')
+2022-05-01 20:03:18,060 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,061 [INFO] sqlalchemy.engine.Engine: [cached since 0.07959s ago] ('Stranger Looks', 'Dj Uro', '2017', 'Electronic')
+2022-05-01 20:03:18,061 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,061 [INFO] sqlalchemy.engine.Engine: [cached since 0.08s ago] ('IDGAF', 'Dua Lipa', '2017', 'Pop')
+2022-05-01 20:03:18,061 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,061 [INFO] sqlalchemy.engine.Engine: [cached since 0.0804s ago] ('Bitch', 'Meredith Brooks', '1997', 'Pop')
+2022-05-01 20:03:18,062 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,062 [INFO] sqlalchemy.engine.Engine: [cached since 0.08081s ago] ('Dirty Laundry', 'Don Henley', '1982', 'Mainstream Rock')
+2022-05-01 20:03:18,062 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,062 [INFO] sqlalchemy.engine.Engine: [cached since 0.08119s ago] ('Save a Horse (Ride a Cowboy)', 'Big & Rich', '2003', 'Country')
+2022-05-01 20:03:18,062 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,063 [INFO] sqlalchemy.engine.Engine: [cached since 0.08161s ago] ('Your Love (feat. The Outfield)', 'Morgan Page', '2013', 'Dance')
+2022-05-01 20:03:18,063 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,063 [INFO] sqlalchemy.engine.Engine: [cached since 0.08201s ago] ('no tears left to cry', 'Ariana Grande', '2018', 'Pop')
+2022-05-01 20:03:18,063 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,063 [INFO] sqlalchemy.engine.Engine: [cached since 0.08243s ago] ('The Closing Song', 'Red Peters', '1999', 'Comedy')
+2022-05-01 20:03:18,064 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,064 [INFO] sqlalchemy.engine.Engine: [cached since 0.08284s ago] ('A*****e', 'Denis Leary', '1993', 'Comedy')
+2022-05-01 20:03:18,064 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,064 [INFO] sqlalchemy.engine.Engine: [cached since 0.0833s ago] ('Blow Me (You Hardly Even Know Me)', 'Red Peters', '1995', 'Comedy')
+2022-05-01 20:03:18,064 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,065 [INFO] sqlalchemy.engine.Engine: [cached since 0.08368s ago] ('Filthy', 'Justin Timberlake', '2018', 'Pop')
+2022-05-01 20:03:18,065 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,065 [INFO] sqlalchemy.engine.Engine: [cached since 0.08409s ago] ('Stayin\' Alive (From "Saturday Night Fever" Soundtrack)', 'Bee Gees', '1977', 'Pop')
+2022-05-01 20:03:18,065 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,065 [INFO] sqlalchemy.engine.Engine: [cached since 0.0845s ago] ('Pardon Me', 'Incubus', '1999', 'Alternative')
+2022-05-01 20:03:18,066 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,066 [INFO] sqlalchemy.engine.Engine: [cached since 0.08486s ago] ('See You Again (feat. Charlie Puth)', 'Wiz Khalifa', '2015', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,066 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,066 [INFO] sqlalchemy.engine.Engine: [cached since 0.08526s ago] ('All of Me', 'John Legend', '2013', 'R&B/Soul')
+2022-05-01 20:03:18,066 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,067 [INFO] sqlalchemy.engine.Engine: [cached since 0.08569s ago] ('Safe and Sound', 'Capital Cities', '2011', 'Alternative')
+2022-05-01 20:03:18,067 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,067 [INFO] sqlalchemy.engine.Engine: [cached since 0.0861s ago] ('1984', 'Inteus', '2019', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,067 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,067 [INFO] sqlalchemy.engine.Engine: [cached since 0.08651s ago] ('In Too Deep', 'Superior.', '2019', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,068 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,068 [INFO] sqlalchemy.engine.Engine: [cached since 0.08691s ago] ('Old Number Seven', 'The Devil Makes Three', '2002', 'Singer/Songwriter')
+2022-05-01 20:03:18,068 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,068 [INFO] sqlalchemy.engine.Engine: [cached since 0.08728s ago] ('Desperado', 'Rihanna', '2016', 'Pop')
+2022-05-01 20:03:18,068 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,069 [INFO] sqlalchemy.engine.Engine: [cached since 0.08766s ago] ('Señorita', 'Shawn Mendes & Camila Cabello', '2019', 'Pop')
+2022-05-01 20:03:18,069 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,069 [INFO] sqlalchemy.engine.Engine: [cached since 0.08803s ago] ('Renegades of Funk', 'Rage Against the Machine', '2000', 'Hard Rock')
+2022-05-01 20:03:18,069 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,069 [INFO] sqlalchemy.engine.Engine: [cached since 0.08848s ago] ('Mudshovel', 'Staind', '1999', 'Hard Rock')
+2022-05-01 20:03:18,070 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,070 [INFO] sqlalchemy.engine.Engine: [cached since 0.08889s ago] ('Phonk (feat. No Money)', 'SQBI', '2019', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,070 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,070 [INFO] sqlalchemy.engine.Engine: [cached since 0.08929s ago] ("I Don't Wanna Use Your Love Tonight", 'DJ K.O.', '2013', 'Pop')
+2022-05-01 20:03:18,070 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,071 [INFO] sqlalchemy.engine.Engine: [cached since 0.08974s ago] ('Sex with Me (MK Remix)', 'Rihanna', '2017', 'Dance')
+2022-05-01 20:03:18,071 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,071 [INFO] sqlalchemy.engine.Engine: [cached since 0.09016s ago] ('Radioactive (Grouplove & Captain Cuts Remix)', 'Imagine Dragons', '2013', 'Alternative')
+2022-05-01 20:03:18,071 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,071 [INFO] sqlalchemy.engine.Engine: [cached since 0.09059s ago] ('See You Again (feat. Charlie Puth)', 'Wiz Khalifa', '2015', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,072 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,072 [INFO] sqlalchemy.engine.Engine: [cached since 0.09101s ago] ('See You Again', 'Elle King', '2015', 'Alternative')
+2022-05-01 20:03:18,072 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,072 [INFO] sqlalchemy.engine.Engine: [cached since 0.09142s ago] ('Walking (feat. Swae Lee & Major Lazer)', '88rising, Joji & Jackson Wang', '2019', 'Pop')
+2022-05-01 20:03:18,073 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,073 [INFO] sqlalchemy.engine.Engine: [cached since 0.09183s ago] ('Earned It (Fifty Shades of Grey)', 'The Weeknd', '2015', 'R&B/Soul')
+2022-05-01 20:03:18,073 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,073 [INFO] sqlalchemy.engine.Engine: [cached since 0.09221s ago] ('Bad Things', 'Machine Gun Kelly & Camila Cabello', '2016', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,073 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,074 [INFO] sqlalchemy.engine.Engine: [cached since 0.09263s ago] ('Sex', 'Cheat Codes & Kris Kross Amsterdam', '2016', 'Dance')
+2022-05-01 20:03:18,074 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,074 [INFO] sqlalchemy.engine.Engine: [cached since 0.09304s ago] ('In the Air Tonight', 'In This Moment', '2017', 'Metal')
+2022-05-01 20:03:18,074 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,074 [INFO] sqlalchemy.engine.Engine: [cached since 0.09344s ago] ('Just Us (feat. SZA)', 'DJ Khaled', '2019', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,075 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,075 [INFO] sqlalchemy.engine.Engine: [cached since 0.09382s ago] ('Eastside', 'benny blanco, Halsey & Khalid', '2018', 'Pop')
+2022-05-01 20:03:18,075 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,075 [INFO] sqlalchemy.engine.Engine: [cached since 0.09423s ago] ('Drive (feat. Delilah Montagu) [Edit]', 'Black Coffee & David Guetta', '2018', 'Dance')
+2022-05-01 20:03:18,075 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,076 [INFO] sqlalchemy.engine.Engine: [cached since 0.09465s ago] ('Diamonds', 'Rihanna', '2012', 'Pop')
+2022-05-01 20:03:18,076 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,076 [INFO] sqlalchemy.engine.Engine: [cached since 0.09502s ago] ('I Miss You', 'blink-182', '2003', 'Rock')
+2022-05-01 20:03:18,076 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,076 [INFO] sqlalchemy.engine.Engine: [cached since 0.09542s ago] ('Green Light (Chromeo Remix)', 'Lorde', '2017', 'Alternative')
+2022-05-01 20:03:18,077 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,077 [INFO] sqlalchemy.engine.Engine: [cached since 0.09584s ago] ('Him & I', 'G-Eazy & Halsey', '2017', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,077 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,077 [INFO] sqlalchemy.engine.Engine: [cached since 0.09631s ago] ('Drive (feat. Delilah Montagu)', 'Black Coffee & David Guetta', '2018', 'Dance')
+2022-05-01 20:03:18,078 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,078 [INFO] sqlalchemy.engine.Engine: [cached since 0.09676s ago] ('bad guy', 'Billie Eilish', '2019', 'Alternative')
+2022-05-01 20:03:18,078 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,078 [INFO] sqlalchemy.engine.Engine: [cached since 0.09716s ago] ('Sunflower (Spider-Man: Into the Spider-Verse)', 'Post Malone & Swae Lee', '2018', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,078 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,078 [INFO] sqlalchemy.engine.Engine: [cached since 0.09756s ago] ('Better Now', 'Post Malone', '2018', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,079 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,079 [INFO] sqlalchemy.engine.Engine: [cached since 0.09795s ago] ('Hustler Musik', 'Lil Wayne', '2005', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,079 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,079 [INFO] sqlalchemy.engine.Engine: [cached since 0.09832s ago] ('Cool Girl', 'Tove Lo', '2016', 'Alternative')
+2022-05-01 20:03:18,079 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,080 [INFO] sqlalchemy.engine.Engine: [cached since 0.09868s ago] ('Sex', 'Cheat Codes & Kris Kross Amsterdam', '2016', 'Dance')
+2022-05-01 20:03:18,080 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,080 [INFO] sqlalchemy.engine.Engine: [cached since 0.09913s ago] ('Broken', 'lovelytheband', '2017', 'Alternative')
+2022-05-01 20:03:18,080 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,080 [INFO] sqlalchemy.engine.Engine: [cached since 0.09954s ago] ('Fast Car', 'Jasmine Thompson', '2016', 'Pop')
+2022-05-01 20:03:18,081 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,081 [INFO] sqlalchemy.engine.Engine: [cached since 0.09994s ago] ('I Miss You', 'blink-182', '2003', 'Rock')
+2022-05-01 20:03:18,081 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,081 [INFO] sqlalchemy.engine.Engine: [cached since 0.1003s ago] ('Sucker', 'Jonas Brothers', '2019', 'Pop')
+2022-05-01 20:03:18,081 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,082 [INFO] sqlalchemy.engine.Engine: [cached since 0.1007s ago] ('Fuego', 'Alok & Bhaskar', '2017', 'Dance')
+2022-05-01 20:03:18,082 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,082 [INFO] sqlalchemy.engine.Engine: [cached since 0.1011s ago] ('Girls Have Fun (feat. G-Eazy & Rich The Kid)', 'Tyga', '2019', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,082 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,082 [INFO] sqlalchemy.engine.Engine: [cached since 0.1015s ago] ('Specta (Deepfunk Remix)', 'Castano & Four Candles', '2015', 'Dance')
+2022-05-01 20:03:18,083 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,083 [INFO] sqlalchemy.engine.Engine: [cached since 0.1019s ago] ('Perfect', 'Ed Sheeran', '2017', 'Pop')
+2022-05-01 20:03:18,083 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,083 [INFO] sqlalchemy.engine.Engine: [cached since 0.1023s ago] ('Sign of the Times', 'Harry Styles', '2017', 'Pop')
+2022-05-01 20:03:18,083 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,084 [INFO] sqlalchemy.engine.Engine: [cached since 0.1027s ago] ('Pop Tart', 'Margolnick', '2018', 'Alternative')
+2022-05-01 20:03:18,084 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,084 [INFO] sqlalchemy.engine.Engine: [cached since 0.1031s ago] ('Colors', 'St. Beauty', '2018', 'R&B/Soul')
+2022-05-01 20:03:18,084 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,084 [INFO] sqlalchemy.engine.Engine: [cached since 0.1035s ago] ('In the Air Tonight', 'Panski, John Skyfield & Dana Kelson', '2018', 'House')
+2022-05-01 20:03:18,085 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,085 [INFO] sqlalchemy.engine.Engine: [cached since 0.1039s ago] ('Cool Girl', 'Tove Lo', '2016', 'Alternative')
+2022-05-01 20:03:18,085 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,085 [INFO] sqlalchemy.engine.Engine: [cached since 0.1043s ago] ('Go Head', 'Rocstrong', '2014', 'Alternative')
+2022-05-01 20:03:18,085 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,086 [INFO] sqlalchemy.engine.Engine: [cached since 0.1047s ago] ('Time of Our Lives', 'Pitbull & Ne-Yo', '2014', 'Pop')
+2022-05-01 20:03:18,086 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,086 [INFO] sqlalchemy.engine.Engine: [cached since 0.1051s ago] ('Slow for Me (feat. Tory Lanez)', 'Melii', '2019', 'R&B/Soul')
+2022-05-01 20:03:18,086 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,086 [INFO] sqlalchemy.engine.Engine: [cached since 0.1055s ago] ('Careless Whisper', 'Nataly Dawn', '2017', 'Singer/Songwriter')
+2022-05-01 20:03:18,087 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,087 [INFO] sqlalchemy.engine.Engine: [cached since 0.1059s ago] ('Levels', 'Avicii', '2011', 'Dance')
+2022-05-01 20:03:18,087 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,087 [INFO] sqlalchemy.engine.Engine: [cached since 0.1063s ago] ('Regulate (feat. Nate Dogg)', 'Warren G', '1994', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,087 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,088 [INFO] sqlalchemy.engine.Engine: [cached since 0.1067s ago] ('I Kissed a Girl', 'Katy Perry', '2008', 'Pop')
+2022-05-01 20:03:18,088 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,088 [INFO] sqlalchemy.engine.Engine: [cached since 0.1071s ago] ('Picture (feat. Sheryl Crow)', 'Kid Rock', '2001', 'Hard Rock')
+2022-05-01 20:03:18,088 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,088 [INFO] sqlalchemy.engine.Engine: [cached since 0.1075s ago] ('Sexy and I Know It', 'LMFAO', '2011', 'Pop')
+2022-05-01 20:03:18,089 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,089 [INFO] sqlalchemy.engine.Engine: [cached since 0.1079s ago] ('Many Men (Wish Death)', '50 Cent', '2003', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,089 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,089 [INFO] sqlalchemy.engine.Engine: [cached since 0.1083s ago] ('Boulevard of Broken Dreams', 'Green Day', '2004', 'Alternative')
+2022-05-01 20:03:18,090 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,090 [INFO] sqlalchemy.engine.Engine: [cached since 0.1088s ago] ('Broken', 'lovelytheband', '2017', 'Alternative')
+2022-05-01 20:03:18,090 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,090 [INFO] sqlalchemy.engine.Engine: [cached since 0.1092s ago] ('Old Town Road', 'Lil Nas X', '2018', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,090 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,091 [INFO] sqlalchemy.engine.Engine: [cached since 0.1096s ago] ('Schism', 'TOOL', '2001', 'Metal')
+2022-05-01 20:03:18,091 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,091 [INFO] sqlalchemy.engine.Engine: [cached since 0.11s ago] ('High Hopes', 'Panic! At the Disco', '2018', 'Alternative')
+2022-05-01 20:03:18,091 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,091 [INFO] sqlalchemy.engine.Engine: [cached since 0.1104s ago] ('Love and Happiness', 'Al Green', '1972', 'Soul')
+2022-05-01 20:03:18,092 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,092 [INFO] sqlalchemy.engine.Engine: [cached since 0.1108s ago] ('Sign of the Times', 'Harry Styles', '2017', 'Pop')
+2022-05-01 20:03:18,092 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,092 [INFO] sqlalchemy.engine.Engine: [cached since 0.1112s ago] ('Umbrella (feat. JAY-Z)', 'Rihanna', '2007', 'Pop')
+2022-05-01 20:03:18,092 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,093 [INFO] sqlalchemy.engine.Engine: [cached since 0.1116s ago] ('Here', 'Alessia Cara', '2015', 'Pop')
+2022-05-01 20:03:18,093 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,093 [INFO] sqlalchemy.engine.Engine: [cached since 0.112s ago] ('Someone You Loved', 'Lewis Capaldi', '2018', 'Alternative')
+2022-05-01 20:03:18,093 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,093 [INFO] sqlalchemy.engine.Engine: [cached since 0.1124s ago] ('Happier', 'Marshmello & Bastille', '2018', 'Dance')
+2022-05-01 20:03:18,094 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,094 [INFO] sqlalchemy.engine.Engine: [cached since 0.1128s ago] ('South of the Border (feat. Camila Cabello & Cardi B)', 'Ed Sheeran', '2019', 'Pop')
+2022-05-01 20:03:18,094 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,094 [INFO] sqlalchemy.engine.Engine: [cached since 0.1132s ago] ('What a Man Gotta Do', 'Jonas Brothers', '2020', 'Pop')
+2022-05-01 20:03:18,094 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,095 [INFO] sqlalchemy.engine.Engine: [cached since 0.1136s ago] ('I Like Me Better', 'Lauv', '2017', 'Pop')
+2022-05-01 20:03:18,095 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,095 [INFO] sqlalchemy.engine.Engine: [cached since 0.114s ago] ('Stay With Me', 'Sam Smith', '2014', 'Pop')
+2022-05-01 20:03:18,095 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,095 [INFO] sqlalchemy.engine.Engine: [cached since 0.1144s ago] ('Blinding Lights', 'The Weeknd', '2019', 'R&B/Soul')
+2022-05-01 20:03:18,096 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,096 [INFO] sqlalchemy.engine.Engine: [cached since 0.1148s ago] ('Strangelove (Maxi Mix Version)', 'Depeche Mode', '1987', 'Pop')
+2022-05-01 20:03:18,096 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,096 [INFO] sqlalchemy.engine.Engine: [cached since 0.1151s ago] ('Sun Goes Down (feat. Isadora)', 'Bruno Martini', '2017', 'Electronic')
+2022-05-01 20:03:18,096 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,096 [INFO] sqlalchemy.engine.Engine: [cached since 0.1155s ago] ('Dance Monkey', 'Tones And I', '2019', 'Alternative')
+2022-05-01 20:03:18,097 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,097 [INFO] sqlalchemy.engine.Engine: [cached since 0.1159s ago] ('Sweater Weather', 'The Neighbourhood', '2013', 'Alternative')
+2022-05-01 20:03:18,097 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,097 [INFO] sqlalchemy.engine.Engine: [cached since 0.1164s ago] ('Piece Of Your Heart', 'Meduza & Goodboys', '2019', 'Dance')
+2022-05-01 20:03:18,098 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,098 [INFO] sqlalchemy.engine.Engine: [cached since 0.1168s ago] ('Gimme Shelter', 'Puddle of Mudd', '2011', 'Alternative')
+2022-05-01 20:03:18,098 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,098 [INFO] sqlalchemy.engine.Engine: [cached since 0.1172s ago] ('Take Me Home (feat. Bebe Rexha) [Acoustic]', 'Cash Cash', '2013', 'Dance')
+2022-05-01 20:03:18,098 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,099 [INFO] sqlalchemy.engine.Engine: [cached since 0.1176s ago] ('Tipsy (Club Mix)', 'J-Kwon', '2004', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,099 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,099 [INFO] sqlalchemy.engine.Engine: [cached since 0.118s ago] ('No Diggity', 'Blackstreet', '2010', 'Hip-Hop')
+2022-05-01 20:03:18,099 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,099 [INFO] sqlalchemy.engine.Engine: [cached since 0.1184s ago] ('Save Tonight (feat. Pearl Andersson) [Wideboys Remix]', 'Jayddyn', '2018', 'Pop')
+2022-05-01 20:03:18,100 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,100 [INFO] sqlalchemy.engine.Engine: [cached since 0.1187s ago] ('Darkside', 'blink-182', '2019', 'Rock')
+2022-05-01 20:03:18,100 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,100 [INFO] sqlalchemy.engine.Engine: [cached since 0.1192s ago] ('Sandstorm', 'Darude', '1999', 'Dance')
+2022-05-01 20:03:18,100 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,100 [INFO] sqlalchemy.engine.Engine: [cached since 0.1196s ago] ('faultline', 'Reuben And The Dark', '2019', 'Alternative')
+2022-05-01 20:03:18,101 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,101 [INFO] sqlalchemy.engine.Engine: [cached since 0.12s ago] ('Titty Dancer', 'Dan Diamond', '2007', 'Electronic')
+2022-05-01 20:03:18,101 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,101 [INFO] sqlalchemy.engine.Engine: [cached since 0.1204s ago] ('Time After Time', 'INOJ', '1998', 'R&B/Soul')
+2022-05-01 20:03:18,102 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,102 [INFO] sqlalchemy.engine.Engine: [cached since 0.1207s ago] ('White Room', 'Cream', '1968', 'Rock')
+2022-05-01 20:03:18,102 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,102 [INFO] sqlalchemy.engine.Engine: [cached since 0.1211s ago] ("I Was Made for Lovin' You", 'Kiss', '1979', 'Hard Rock')
+2022-05-01 20:03:18,102 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,102 [INFO] sqlalchemy.engine.Engine: [cached since 0.1215s ago] ('Lover', 'Taylor Swift', '2019', 'Pop')
+2022-05-01 20:03:18,103 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,103 [INFO] sqlalchemy.engine.Engine: [cached since 0.1219s ago] ('Joy and Pain', 'Rob Base & DJ EZ Rock', '2005', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,103 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,103 [INFO] sqlalchemy.engine.Engine: [cached since 0.1223s ago] ('Time After Time', 'INOJ', '1998', 'R&B/Soul')
+2022-05-01 20:03:18,103 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,104 [INFO] sqlalchemy.engine.Engine: [cached since 0.1228s ago] ('I Ran (So Far Away)', 'A Flock of Seagulls', '1982', 'Pop')
+2022-05-01 20:03:18,104 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,104 [INFO] sqlalchemy.engine.Engine: [cached since 0.1232s ago] ('Guiding Light', 'Quiet Boys', '1997', 'Jazz')
+2022-05-01 20:03:18,104 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,104 [INFO] sqlalchemy.engine.Engine: [cached since 0.1236s ago] ('Emerge', 'Fischerspooner', '2001', 'Electronic')
+2022-05-01 20:03:18,105 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,105 [INFO] sqlalchemy.engine.Engine: [cached since 0.124s ago] ('In This World', 'Moby', '2002', 'Electronic')
+2022-05-01 20:03:18,105 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,105 [INFO] sqlalchemy.engine.Engine: [cached since 0.1244s ago] ('Like This Like That', 'BEGINNERS & Night Panda', '2020', 'Pop')
+2022-05-01 20:03:18,106 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,106 [INFO] sqlalchemy.engine.Engine: [cached since 0.1248s ago] ('I Feel Free', 'Cream', '1998', 'Blues Rock')
+2022-05-01 20:03:18,106 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,106 [INFO] sqlalchemy.engine.Engine: [cached since 0.1252s ago] ('Season of the Witch', 'Donovan', '1969', 'Rock')
+2022-05-01 20:03:18,106 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,107 [INFO] sqlalchemy.engine.Engine: [cached since 0.1256s ago] ('Barabajagal (with the Jeff Beck Group) [Single Version]', 'Donovan', '1969', 'Rock')
+2022-05-01 20:03:18,107 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,107 [INFO] sqlalchemy.engine.Engine: [cached since 0.126s ago] ('Mellow Yellow', 'Donovan', '1966', 'Rock')
+2022-05-01 20:03:18,107 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,107 [INFO] sqlalchemy.engine.Engine: [cached since 0.1264s ago] ('Foundations (Full Explicit Version)', 'Kate Nash', '2007', 'Pop')
+2022-05-01 20:03:18,108 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,108 [INFO] sqlalchemy.engine.Engine: [cached since 0.1268s ago] ('Own Alone', 'Bahamas', '2020', 'Alternative')
+2022-05-01 20:03:18,108 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,108 [INFO] sqlalchemy.engine.Engine: [cached since 0.1272s ago] ("Don't Rush (feat. Headie One)", 'Young T & Bugsey', '2019', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,108 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,109 [INFO] sqlalchemy.engine.Engine: [cached since 0.1276s ago] ('Blame (feat. John Newman)', 'Calvin Harris', '2014', 'Dance')
+2022-05-01 20:03:18,109 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,109 [INFO] sqlalchemy.engine.Engine: [cached since 0.128s ago] ('Love Me Again', 'John Newman', '2013', 'Pop')
+2022-05-01 20:03:18,109 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,109 [INFO] sqlalchemy.engine.Engine: [cached since 0.1285s ago] ('Eastside', 'benny blanco, Halsey & Khalid', '2018', 'Pop')
+2022-05-01 20:03:18,110 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,110 [INFO] sqlalchemy.engine.Engine: [cached since 0.1289s ago] ('Nice to Meet Ya', 'Niall Horan', '2019', 'Pop')
+2022-05-01 20:03:18,110 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,110 [INFO] sqlalchemy.engine.Engine: [cached since 0.1293s ago] ('Talking in Your Sleep', 'Lia Rose', '2020', 'Rock')
+2022-05-01 20:03:18,111 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,111 [INFO] sqlalchemy.engine.Engine: [cached since 0.1298s ago] ('Speedo', 'The Cadillacs', '1955', 'R&B/Soul')
+2022-05-01 20:03:18,111 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,111 [INFO] sqlalchemy.engine.Engine: [cached since 0.1301s ago] ('GIRL LIKE ME', 'Black Eyed Peas & Shakira', '2020', 'Pop')
+2022-05-01 20:03:18,111 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,111 [INFO] sqlalchemy.engine.Engine: [cached since 0.1305s ago] ('OK (feat. James Blunt)', 'Robin Schulz', '2017', 'Dance')
+2022-05-01 20:03:18,112 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,112 [INFO] sqlalchemy.engine.Engine: [cached since 0.1309s ago] ("I Feel Like I'm Drowning", 'Two Feet', '2017', 'Alternative')
+2022-05-01 20:03:18,112 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,112 [INFO] sqlalchemy.engine.Engine: [cached since 0.1313s ago] ("Don't Stand So Close to Me (Remastered 2003)", 'The Police', '1980', 'Rock')
+2022-05-01 20:03:18,112 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,113 [INFO] sqlalchemy.engine.Engine: [cached since 0.1317s ago] ('Chan Chan', 'Buena Vista Social Club', '1997', 'Cuban')
+2022-05-01 20:03:18,113 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,113 [INFO] sqlalchemy.engine.Engine: [cached since 0.1321s ago] ('Your Song', 'Elton John', '1970', 'Pop')
+2022-05-01 20:03:18,113 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,113 [INFO] sqlalchemy.engine.Engine: [cached since 0.1325s ago] ('Wheel In the Sky', 'Journey', '1978', 'Rock')
+2022-05-01 20:03:18,114 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,114 [INFO] sqlalchemy.engine.Engine: [cached since 0.1329s ago] ('Take Five (feat. George Shearing)', 'Tito Puente & His Latin Ensemble', '1985', 'Jazz')
+2022-05-01 20:03:18,114 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,114 [INFO] sqlalchemy.engine.Engine: [cached since 0.1333s ago] ('Superstition', 'Stevie Wonder', '1972', 'R&B/Soul')
+2022-05-01 20:03:18,114 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,115 [INFO] sqlalchemy.engine.Engine: [cached since 0.1337s ago] ("Day 'n' Nite", 'Kid Cudi', '2008', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,115 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,115 [INFO] sqlalchemy.engine.Engine: [cached since 0.1341s ago] ('Gold On the Ceiling', 'The Black Keys', '2011', 'Alternative')
+2022-05-01 20:03:18,115 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,115 [INFO] sqlalchemy.engine.Engine: [cached since 0.1345s ago] ('Fly Away', 'Tones And I', '2020', 'Alternative')
+2022-05-01 20:03:18,116 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,116 [INFO] sqlalchemy.engine.Engine: [cached since 0.1349s ago] ('Dance Monkey', 'Tones And I', '2019', 'Alternative')
+2022-05-01 20:03:18,116 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,116 [INFO] sqlalchemy.engine.Engine: [cached since 0.1353s ago] ('Blinding Lights', 'The Weeknd', '2019', 'R&B/Soul')
+2022-05-01 20:03:18,116 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,117 [INFO] sqlalchemy.engine.Engine: [cached since 0.1357s ago] ('Goosebumps', 'HVME', '2020', 'Dance')
+2022-05-01 20:03:18,117 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,117 [INFO] sqlalchemy.engine.Engine: [cached since 0.1362s ago] ('Baila Conmigo (feat. Kelly Ruiz)', 'Dayvi & Victor Cardenas', '2019', 'Dance')
+2022-05-01 20:03:18,117 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,118 [INFO] sqlalchemy.engine.Engine: [cached since 0.1366s ago] ('ROCKSTAR (feat. Roddy Ricch)', 'DaBaby', '2020', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,118 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,118 [INFO] sqlalchemy.engine.Engine: [cached since 0.137s ago] ('My Way', 'Calvin Harris', '2016', 'Dance')
+2022-05-01 20:03:18,118 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,118 [INFO] sqlalchemy.engine.Engine: [cached since 0.1374s ago] ('A Deeper Love', 'Nicola Fasano, Dual Beat & Plastik Funk', '2021', 'Dance')
+2022-05-01 20:03:18,119 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,119 [INFO] sqlalchemy.engine.Engine: [cached since 0.1378s ago] ('Dark Beat (Chus & Ceballos Remix)', 'Oscar G & Ralph Falcon', '2002', 'Dance')
+2022-05-01 20:03:18,119 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,119 [INFO] sqlalchemy.engine.Engine: [cached since 0.1382s ago] ('Sugar (feat. Domino)', 'Benny Benassi', '2021', 'Dance')
+2022-05-01 20:03:18,119 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,120 [INFO] sqlalchemy.engine.Engine: [cached since 0.1386s ago] ('Prisoner (feat. Dua Lipa) [Jax Jones Remix]', 'Miley Cyrus', '2021', 'Pop')
+2022-05-01 20:03:18,120 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,120 [INFO] sqlalchemy.engine.Engine: [cached since 0.139s ago] ('My House (Jameston Thieves & ARKN Remix)', 'Flo Rida', '2015', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,120 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,120 [INFO] sqlalchemy.engine.Engine: [cached since 0.1395s ago] ('Cheerleader (Felix Jaehn Remix Radio Edit)', 'Omi', '2014', 'Dance')
+2022-05-01 20:03:18,121 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,121 [INFO] sqlalchemy.engine.Engine: [cached since 0.1398s ago] ('Take Me to Church', 'Hozier', '2013', 'Alternative')
+2022-05-01 20:03:18,121 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,121 [INFO] sqlalchemy.engine.Engine: [cached since 0.1402s ago] ('Dreams', 'THAT KIND', '2020', 'Dance')
+2022-05-01 20:03:18,121 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,122 [INFO] sqlalchemy.engine.Engine: [cached since 0.1406s ago] ('You Gotta Be (feat. Reigan) [MOTi & Terry McLove Remix]', 'Bombs Away', '2019', 'Dance')
+2022-05-01 20:03:18,122 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,122 [INFO] sqlalchemy.engine.Engine: [cached since 0.1411s ago] ('Prisoner (feat. Dua Lipa) [Jax Jones Remix]', 'Miley Cyrus', '2021', 'Pop')
+2022-05-01 20:03:18,122 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,122 [INFO] sqlalchemy.engine.Engine: [cached since 0.1415s ago] ('Dreams (feat. Lanie Gardner)', 'David Guetta & MORTEN', '2020', 'Dance')
+2022-05-01 20:03:18,123 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,123 [INFO] sqlalchemy.engine.Engine: [cached since 0.1419s ago] ('Sunglasses at Night', 'Corey Hart', '1984', 'Rock')
+2022-05-01 20:03:18,123 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,123 [INFO] sqlalchemy.engine.Engine: [cached since 0.1423s ago] ('Time After Time', 'Distant Soundz', '2001', 'Garage')
+2022-05-01 20:03:18,123 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,124 [INFO] sqlalchemy.engine.Engine: [cached since 0.1427s ago] ('Stayin\' Alive (From "Saturday Night Fever" Soundtrack)', 'Bee Gees', '1977', 'Pop')
+2022-05-01 20:03:18,124 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,124 [INFO] sqlalchemy.engine.Engine: [cached since 0.1432s ago] ("Operator (That's Not the Way It Feels)", 'Jim Croce', '1972', 'Rock')
+2022-05-01 20:03:18,124 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,125 [INFO] sqlalchemy.engine.Engine: [cached since 0.1436s ago] ('Innerbloom', 'RÜFÜS DU SOL', '2015', 'Electronic')
+2022-05-01 20:03:18,125 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,125 [INFO] sqlalchemy.engine.Engine: [cached since 0.144s ago] ('Piece Of Your Heart', 'Meduza & Goodboys', '2019', 'Dance')
+2022-05-01 20:03:18,125 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,125 [INFO] sqlalchemy.engine.Engine: [cached since 0.1444s ago] ("Fav Boyz (feat. Thutmose) [Steve Aoki's Gold Star Remix]", 'A.C.E', '2021', 'K-Pop')
+2022-05-01 20:03:18,126 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,126 [INFO] sqlalchemy.engine.Engine: [cached since 0.1449s ago] ("DJ Got Us Fallin' In Love (feat. Pitbull)", 'Usher', '2010', 'R&B/Soul')
+2022-05-01 20:03:18,126 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,126 [INFO] sqlalchemy.engine.Engine: [cached since 0.1453s ago] ('DÁKITI', 'Bad Bunny & Jhay Cortez', '2020', 'Urbano latino')
+2022-05-01 20:03:18,126 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,127 [INFO] sqlalchemy.engine.Engine: [cached since 0.1457s ago] ('360 (feat. MC Juninho FSF)', 'LUCK MUZIK, MC Mirella & Rennan da Penha', '2020', 'Baile Funk')
+2022-05-01 20:03:18,127 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,127 [INFO] sqlalchemy.engine.Engine: [cached since 0.1461s ago] ('Si Es Trucho Es Trucho (Remix)', 'Axel Rulay, Farruko & El Alfa', '2021', 'Modern Dancehall')
+2022-05-01 20:03:18,127 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,127 [INFO] sqlalchemy.engine.Engine: [cached since 0.1465s ago] ('DÁKITI', 'Bad Bunny & Jhay Cortez', '2020', 'Urbano latino')
+2022-05-01 20:03:18,128 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,128 [INFO] sqlalchemy.engine.Engine: [cached since 0.1468s ago] ("DJ Got Us Fallin' In Love (feat. Pitbull)", 'Usher', '2010', 'R&B/Soul')
+2022-05-01 20:03:18,128 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,128 [INFO] sqlalchemy.engine.Engine: [cached since 0.1473s ago] ("Fav Boyz (feat. Thutmose) [Steve Aoki's Gold Star Remix]", 'A.C.E', '2021', 'K-Pop')
+2022-05-01 20:03:18,128 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,129 [INFO] sqlalchemy.engine.Engine: [cached since 0.1477s ago] ('good 4 u', 'Olivia Rodrigo', '2021', 'Pop')
+2022-05-01 20:03:18,129 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,129 [INFO] sqlalchemy.engine.Engine: [cached since 0.1481s ago] ('Stole the Show (feat. Parson James)', 'Kygo', '2015', 'Dance')
+2022-05-01 20:03:18,129 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,129 [INFO] sqlalchemy.engine.Engine: [cached since 0.1485s ago] ('Wicked Games (feat. Anna Naklab)', 'Parra for Cuva', '2013', 'Dance')
+2022-05-01 20:03:18,130 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,130 [INFO] sqlalchemy.engine.Engine: [cached since 0.1489s ago] ('Just the Two of Us', 'Kauai45 & Sweet Cocoa', '2020', 'R&B/Soul')
+2022-05-01 20:03:18,130 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,130 [INFO] sqlalchemy.engine.Engine: [cached since 0.1493s ago] ('Watermelon Sugar', 'Harry Styles', '2019', 'Pop')
+2022-05-01 20:03:18,130 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,131 [INFO] sqlalchemy.engine.Engine: [cached since 0.1497s ago] ('Tennessee Whiskey', 'Chris Stapleton', '2015', 'Country')
+2022-05-01 20:03:18,131 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,131 [INFO] sqlalchemy.engine.Engine: [cached since 0.1501s ago] ('Moneyworld', 'Lu-Ni', '2019', 'Latin')
+2022-05-01 20:03:18,131 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,131 [INFO] sqlalchemy.engine.Engine: [cached since 0.1505s ago] ('I Am the King', 'James Meyers', '2015', 'Hip-Hop')
+2022-05-01 20:03:18,132 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,132 [INFO] sqlalchemy.engine.Engine: [cached since 0.1509s ago] ('In the End', 'LINKIN PARK', '2000', 'Alternative')
+2022-05-01 20:03:18,132 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,132 [INFO] sqlalchemy.engine.Engine: [cached since 0.1513s ago] ('DÁKITI', 'Bad Bunny & Jhay Cortez', '2020', 'Urbano latino')
+2022-05-01 20:03:18,132 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,133 [INFO] sqlalchemy.engine.Engine: [cached since 0.1517s ago] ('Adore You', 'Harry Styles', '2019', 'Pop')
+2022-05-01 20:03:18,133 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,133 [INFO] sqlalchemy.engine.Engine: [cached since 0.152s ago] ('Current Mood', 'Gregory David', '2019', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,133 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,133 [INFO] sqlalchemy.engine.Engine: [cached since 0.1524s ago] ('Your Good Lies', 'Vividry', '2019', 'R&B/Soul')
+2022-05-01 20:03:18,134 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,134 [INFO] sqlalchemy.engine.Engine: [cached since 0.1528s ago] ('Rolling in the Deep', 'Adele', '2011', 'Pop')
+2022-05-01 20:03:18,134 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,134 [INFO] sqlalchemy.engine.Engine: [cached since 0.1532s ago] ('Old Town Road', 'Lil Nas X', '2018', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,134 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,134 [INFO] sqlalchemy.engine.Engine: [cached since 0.1535s ago] ('Friendships', 'Pascal Letoublon', '2017', 'House')
+2022-05-01 20:03:18,135 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,135 [INFO] sqlalchemy.engine.Engine: [cached since 0.1539s ago] ('Just the Two of Us (feat. Bill Withers)', 'Grover Washington, Jr.', '1980', 'Jazz')
+2022-05-01 20:03:18,135 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,135 [INFO] sqlalchemy.engine.Engine: [cached since 0.1543s ago] ('Entropy', 'Gregory David', '2020', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,135 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,136 [INFO] sqlalchemy.engine.Engine: [cached since 0.1547s ago] ('Bad Company', 'Bad Company', '1974', 'Rock')
+2022-05-01 20:03:18,136 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,136 [INFO] sqlalchemy.engine.Engine: [cached since 0.1551s ago] ('In the End (feat. Fleurie) [Mellen Gi Remix]', 'Tommee Profitt & Mellen Gi', '2019', 'Alternative')
+2022-05-01 20:03:18,136 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,136 [INFO] sqlalchemy.engine.Engine: [cached since 0.1555s ago] ('Just the Two of Us', 'Grover Washington, Jr. with Bill Withers', '1981', 'R&B/Soul')
+2022-05-01 20:03:18,137 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,137 [INFO] sqlalchemy.engine.Engine: [cached since 0.1559s ago] ('Rooster', 'Alice In Chains', '1992', 'Alternative')
+2022-05-01 20:03:18,137 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,137 [INFO] sqlalchemy.engine.Engine: [cached since 0.1564s ago] ('How Soon Is Now?', 'The Smiths', '1985', 'Alternative')
+2022-05-01 20:03:18,138 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,138 [INFO] sqlalchemy.engine.Engine: [cached since 0.1568s ago] ("I'll Tumble 4 Ya", 'Culture Club', '1982', 'Pop')
+2022-05-01 20:03:18,138 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,138 [INFO] sqlalchemy.engine.Engine: [cached since 0.1572s ago] ('Walk On the Wild Side (Live)', 'Lou Reed', '1978', 'Rock')
+2022-05-01 20:03:18,138 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,138 [INFO] sqlalchemy.engine.Engine: [cached since 0.1575s ago] ('Fuck_Th15', 'TOMZA', '2017', 'Electronic')
+2022-05-01 20:03:18,139 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,139 [INFO] sqlalchemy.engine.Engine: [cached since 0.1579s ago] ("I Can't Help Myself (Sugar Pie, Honey Bunch)", 'Four Tops', '2003', 'Disney')
+2022-05-01 20:03:18,139 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,139 [INFO] sqlalchemy.engine.Engine: [cached since 0.1583s ago] ("I Can't Help Myself (Sugar Pie, Honey Bunch)", 'Four Tops', '2003', 'Disney')
+2022-05-01 20:03:18,139 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,140 [INFO] sqlalchemy.engine.Engine: [cached since 0.1587s ago] ("Don't You (Forget About Me)", 'Simple Minds', '2016', 'Rock')
+2022-05-01 20:03:18,140 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,140 [INFO] sqlalchemy.engine.Engine: [cached since 0.1591s ago] ('Am I Wrong', 'Nico & Vinz', '2013', 'Pop')
+2022-05-01 20:03:18,140 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,140 [INFO] sqlalchemy.engine.Engine: [cached since 0.1596s ago] ('Memories', 'Maroon 5', '2019', 'Pop')
+2022-05-01 20:03:18,141 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,141 [INFO] sqlalchemy.engine.Engine: [cached since 0.16s ago] ('Astronaut In The Ocean', 'Masked Wolf', '2019', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,141 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,141 [INFO] sqlalchemy.engine.Engine: [cached since 0.1604s ago] ('Eleanor Rigby', 'Four Tops', '1969', 'R&B/Soul')
+2022-05-01 20:03:18,141 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,142 [INFO] sqlalchemy.engine.Engine: [cached since 0.1607s ago] ('Bed Room', 'Harmonize', '2020', 'Afro-Pop')
+2022-05-01 20:03:18,142 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,142 [INFO] sqlalchemy.engine.Engine: [cached since 0.1611s ago] ("I Feel Like I'm Drowning", 'Two Feet', '2017', 'Alternative')
+2022-05-01 20:03:18,142 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,142 [INFO] sqlalchemy.engine.Engine: [cached since 0.1615s ago] ('Woman Like a Man (Live, Unplugged)', 'Damien Rice', '2003', 'Pop')
+2022-05-01 20:03:18,143 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,143 [INFO] sqlalchemy.engine.Engine: [cached since 0.1619s ago] ('Ubomi Abumanga', 'Sun-El Musician & Msaki', '2020', 'Dance')
+2022-05-01 20:03:18,143 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,143 [INFO] sqlalchemy.engine.Engine: [cached since 0.1624s ago] ('Drive (feat. Delilah Montagu) [Edit]', 'Black Coffee & David Guetta', '2018', 'Dance')
+2022-05-01 20:03:18,144 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,144 [INFO] sqlalchemy.engine.Engine: [cached since 0.1628s ago] ('Afterlife', 'Bob Ray & Mark Kramer', '2021', 'Techno')
+2022-05-01 20:03:18,144 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,144 [INFO] sqlalchemy.engine.Engine: [cached since 0.1632s ago] ('Apollo', 'Thomas Schumacher & Victor Ruiz', '2016', 'Electronic')
+2022-05-01 20:03:18,144 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,145 [INFO] sqlalchemy.engine.Engine: [cached since 0.1636s ago] ('Brightest Lights (feat. POLIÇA) [Edit]', 'Lane 8', '2019', 'Dance')
+2022-05-01 20:03:18,145 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,145 [INFO] sqlalchemy.engine.Engine: [cached since 0.164s ago] ('Ngci (feat. Mque)', 'OSKIDO', '2017', 'Dance')
+2022-05-01 20:03:18,145 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,145 [INFO] sqlalchemy.engine.Engine: [cached since 0.1644s ago] ('Flug & Fall (Mixed)', 'Ben Böhmer', '2020', 'Dance')
+2022-05-01 20:03:18,146 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,146 [INFO] sqlalchemy.engine.Engine: [cached since 0.1648s ago] ('Control', '80’s Child', '2014', 'House')
+2022-05-01 20:03:18,146 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,146 [INFO] sqlalchemy.engine.Engine: [cached since 0.1652s ago] ('Bad Habits', 'Ed Sheeran', '2021', 'Pop')
+2022-05-01 20:03:18,146 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,146 [INFO] sqlalchemy.engine.Engine: [cached since 0.1656s ago] ('Force of Nature', 'Kilgore', '2019', 'Alternative')
+2022-05-01 20:03:18,147 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,147 [INFO] sqlalchemy.engine.Engine: [cached since 0.166s ago] ('Good Feeling', 'Flo Rida', '2012', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,147 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,147 [INFO] sqlalchemy.engine.Engine: [cached since 0.1664s ago] ('Shooting Stars', 'Bag Raiders', '2008', 'Pop')
+2022-05-01 20:03:18,147 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,148 [INFO] sqlalchemy.engine.Engine: [cached since 0.1667s ago] ('Unwell', 'Matchbox Twenty', '2005', 'Rock')
+2022-05-01 20:03:18,148 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,148 [INFO] sqlalchemy.engine.Engine: [cached since 0.1671s ago] ('Hurricane', 'Bob Dylan', '1976', 'Rock')
+2022-05-01 20:03:18,148 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,148 [INFO] sqlalchemy.engine.Engine: [cached since 0.1674s ago] ('Rose Rouge (feat. Robert Owens)', 'Pete Tong & HERO', '2019', 'Dance')
+2022-05-01 20:03:18,149 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,149 [INFO] sqlalchemy.engine.Engine: [cached since 0.1678s ago] ('Go Crazy (feat. Todd Edwards)', 'Pete Tong & HERO', '2019', 'Dance')
+2022-05-01 20:03:18,149 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,149 [INFO] sqlalchemy.engine.Engine: [cached since 0.1682s ago] ('Symphony of You (feat. Boy George)', 'Pete Tong & HERO', '2019', 'Dance')
+2022-05-01 20:03:18,149 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,150 [INFO] sqlalchemy.engine.Engine: [cached since 0.1687s ago] ('Afeto', 'Mayra Andrade', '2018', 'Worldwide')
+2022-05-01 20:03:18,150 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,150 [INFO] sqlalchemy.engine.Engine: [cached since 0.1691s ago] ('I Want It to Be You (feat. Mac Mase)', 'Tatiana Manaois', '2015', 'Singer/Songwriter')
+2022-05-01 20:03:18,150 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,150 [INFO] sqlalchemy.engine.Engine: [cached since 0.1695s ago] ('Praying to a God (Luke Remix)', 'Mr. Probz', '2019', 'Pop')
+2022-05-01 20:03:18,151 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,151 [INFO] sqlalchemy.engine.Engine: [cached since 0.1699s ago] ('1st Time', 'Bakar', '2020', 'Alternative')
+2022-05-01 20:03:18,151 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,151 [INFO] sqlalchemy.engine.Engine: [cached since 0.1703s ago] ('Paid In Full', 'Eric B. & Rakim', '1987', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,151 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,152 [INFO] sqlalchemy.engine.Engine: [cached since 0.1707s ago] ('Lovely Day', 'Bill Withers', '1977', 'Pop')
+2022-05-01 20:03:18,152 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,152 [INFO] sqlalchemy.engine.Engine: [cached since 0.1711s ago] ('Ich bin der Regen', '2raumwohnung', '2007', 'Pop')
+2022-05-01 20:03:18,152 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,152 [INFO] sqlalchemy.engine.Engine: [cached since 0.1715s ago] ('Ich bin der Regen', '2raumwohnung', '2007', 'Pop')
+2022-05-01 20:03:18,153 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,153 [INFO] sqlalchemy.engine.Engine: [cached since 0.1718s ago] ('Never Stop Loving Featuring Sol (Glissandro Bros. Remix)', 'Fous de la Mer & Sol', '2003', 'Electronic')
+2022-05-01 20:03:18,153 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,153 [INFO] sqlalchemy.engine.Engine: [cached since 0.1722s ago] ('Dark Tabla', 'Kaya Project', '2005', 'Worldbeat')
+2022-05-01 20:03:18,153 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,154 [INFO] sqlalchemy.engine.Engine: [cached since 0.1726s ago] ('Humana', 'Zuco 103', '1999', 'Worldwide')
+2022-05-01 20:03:18,154 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,154 [INFO] sqlalchemy.engine.Engine: [cached since 0.173s ago] ('Somos Dos', 'Bomba Estéreo', '2015', 'Pop Latino')
+2022-05-01 20:03:18,154 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,154 [INFO] sqlalchemy.engine.Engine: [cached since 0.1733s ago] ('Sing It Back (Musical Mix)', 'Moloko', '1999', 'Dance')
+2022-05-01 20:03:18,154 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,155 [INFO] sqlalchemy.engine.Engine: [cached since 0.1737s ago] ('Bad Habits', 'Ed Sheeran', '2021', 'Pop')
+2022-05-01 20:03:18,155 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,155 [INFO] sqlalchemy.engine.Engine: [cached since 0.1741s ago] ("In Hell I'll Be in Good Company", 'The Dead South', '2014', 'Folk')
+2022-05-01 20:03:18,155 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,155 [INFO] sqlalchemy.engine.Engine: [cached since 0.1745s ago] ('Everything You Need', 'Jamie Lono', '2020', 'Pop')
+2022-05-01 20:03:18,156 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,156 [INFO] sqlalchemy.engine.Engine: [cached since 0.175s ago] ('SOS (feat. Aloe Blacc)', 'Avicii', '2019', 'Dance')
+2022-05-01 20:03:18,156 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,156 [INFO] sqlalchemy.engine.Engine: [cached since 0.1755s ago] ('Mystery of Love', 'Mr. Fingers', '1989', 'Dance')
+2022-05-01 20:03:18,157 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,157 [INFO] sqlalchemy.engine.Engine: [cached since 0.1758s ago] ('She Will Be Loved', 'Maroon 5', '2002', 'Vocal')
+2022-05-01 20:03:18,157 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,157 [INFO] sqlalchemy.engine.Engine: [cached since 0.1762s ago] ('Memory', 'Kane Brown x blackbear', '2021', 'Pop')
+2022-05-01 20:03:18,157 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,157 [INFO] sqlalchemy.engine.Engine: [cached since 0.1766s ago] ('Cold Heart (PNAU Remix)', 'Elton John & Dua Lipa', '2021', 'Pop')
+2022-05-01 20:03:18,158 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,158 [INFO] sqlalchemy.engine.Engine: [cached since 0.177s ago] ('Beautiful Girls', 'Sean Kingston', '2007', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,158 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,158 [INFO] sqlalchemy.engine.Engine: [cached since 0.1774s ago] ('Issues', 'Julia Michaels', '2017', 'Pop')
+2022-05-01 20:03:18,159 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,159 [INFO] sqlalchemy.engine.Engine: [cached since 0.1778s ago] ('Home Again', 'Michael Kiwanuka', '2012', 'Singer/Songwriter')
+2022-05-01 20:03:18,159 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,159 [INFO] sqlalchemy.engine.Engine: [cached since 0.1782s ago] ('Issues', 'Julia Michaels', '2017', 'Pop')
+2022-05-01 20:03:18,159 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,160 [INFO] sqlalchemy.engine.Engine: [cached since 0.1786s ago] ('Beautiful Girls', 'Sean Kingston', '2007', 'Hip-Hop/Rap')
+2022-05-01 20:03:18,160 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,160 [INFO] sqlalchemy.engine.Engine: [cached since 0.179s ago] ('Locked Out of Heaven', 'Bruno Mars', '2012', 'Pop')
+2022-05-01 20:03:18,160 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,160 [INFO] sqlalchemy.engine.Engine: [cached since 0.1794s ago] ('Cold Heart (PNAU Remix)', 'Elton John & Dua Lipa', '2021', 'Pop')
+2022-05-01 20:03:18,161 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,161 [INFO] sqlalchemy.engine.Engine: [cached since 0.1798s ago] ('Tank! (TV stretch)', 'Seatbelts', '2004', 'TV Soundtrack')
+2022-05-01 20:03:18,161 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,161 [INFO] sqlalchemy.engine.Engine: [cached since 0.1801s ago] ('Rompecorazones', 'DJ Nelson, Babywine & Alejandro Armes', '2021', 'Latin')
+2022-05-01 20:03:18,161 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,161 [INFO] sqlalchemy.engine.Engine: [cached since 0.1806s ago] ('Runaway', 'Del Shannon', '1996', 'Easy Listening')
+2022-05-01 20:03:18,162 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,162 [INFO] sqlalchemy.engine.Engine: [cached since 0.181s ago] ('You Were Right', 'RÜFÜS DU SOL', '2015', 'Electronic')
+2022-05-01 20:03:18,162 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,162 [INFO] sqlalchemy.engine.Engine: [cached since 0.1814s ago] ('Grenade', 'Bruno Mars', '2010', 'Pop')
+2022-05-01 20:03:18,163 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,163 [INFO] sqlalchemy.engine.Engine: [cached since 0.1819s ago] ('De Quem É a Culpa (Ao Vivo)', 'Marília Mendonça', '2017', 'Sertanejo')
+2022-05-01 20:03:18,163 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,163 [INFO] sqlalchemy.engine.Engine: [cached since 0.1823s ago] ('drivers license', 'Olivia Rodrigo', '2021', 'Pop')
+2022-05-01 20:03:18,163 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,164 [INFO] sqlalchemy.engine.Engine: [cached since 0.1827s ago] ('Easy On Me', 'Adele', '2021', 'Pop')
+2022-05-01 20:03:18,164 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,164 [INFO] sqlalchemy.engine.Engine: [cached since 0.1831s ago] ('Renegades', 'X Ambassadors', '2015', 'Alternative')
+2022-05-01 20:03:18,164 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,164 [INFO] sqlalchemy.engine.Engine: [cached since 0.1834s ago] ('Wolves', 'Selena Gomez & Marshmello', '2017', 'Pop')
+2022-05-01 20:03:18,165 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,165 [INFO] sqlalchemy.engine.Engine: [cached since 0.1838s ago] ('Instant Crush (feat. Julian Casablancas)', 'Daft Punk', '2013', 'Pop')
+2022-05-01 20:03:18,165 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,165 [INFO] sqlalchemy.engine.Engine: [cached since 0.1842s ago] ('Carry On', 'Crosby, Stills, Nash & Young', '1970', 'Rock')
+2022-05-01 20:03:18,165 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,165 [INFO] sqlalchemy.engine.Engine: [cached since 0.1846s ago] ("I Can't Go For That (No Can Do) [Live In Dublin / 2014]", 'Daryl Hall & John Oates', '2015', 'Pop')
+2022-05-01 20:03:18,166 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:18,166 [INFO] sqlalchemy.engine.Engine: [cached since 0.1849s ago] ('Oh No', 'Andrew Bird', '2009', 'Rock')
+2022-05-01 20:03:18,174 [INFO] sqlalchemy.engine.Engine: INSERT INTO song_user (user_id, song_id) VALUES (?, ?)
+2022-05-01 20:03:18,175 [INFO] sqlalchemy.engine.Engine: [generated in 0.00100s] ((1, 294), (1, 406), (1, 282), (1, 287), (1, 295), (1, 407), (1, 267), (1, 296)  ... displaying 10 of 457 total bound parameter sets ...  (1, 240), (1, 191))
+2022-05-01 20:03:18,178 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:19,283 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:19,283 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("song_user")
+2022-05-01 20:03:19,283 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,284 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("song_user")
+2022-05-01 20:03:19,284 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,284 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("songs")
+2022-05-01 20:03:19,285 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,285 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("songs")
+2022-05-01 20:03:19,285 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,285 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+2022-05-01 20:03:19,286 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,286 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("users")
+2022-05-01 20:03:19,286 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,286 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE songs (
+	id INTEGER NOT NULL, 
+	title VARCHAR(300), 
+	artist VARCHAR(300), 
+	year VARCHAR(50), 
+	genre VARCHAR(300), 
+	PRIMARY KEY (id)
+)
+
+
+2022-05-01 20:03:19,287 [INFO] sqlalchemy.engine.Engine: [no key 0.00017s] ()
+2022-05-01 20:03:19,287 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE users (
+	id INTEGER NOT NULL, 
+	email VARCHAR(120) NOT NULL, 
+	password VARCHAR(300) NOT NULL, 
+	about VARCHAR(300), 
+	authenticated BOOLEAN, 
+	registered_on DATETIME, 
+	is_active BOOLEAN DEFAULT '1' NOT NULL, 
+	is_admin BOOLEAN DEFAULT '0' NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (email), 
+	UNIQUE (password)
+)
+
+
+2022-05-01 20:03:19,287 [INFO] sqlalchemy.engine.Engine: [no key 0.00017s] ()
+2022-05-01 20:03:19,288 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE song_user (
+	user_id INTEGER, 
+	song_id INTEGER, 
+	FOREIGN KEY(user_id) REFERENCES users (id), 
+	FOREIGN KEY(song_id) REFERENCES songs (id)
+)
+
+
+2022-05-01 20:03:19,288 [INFO] sqlalchemy.engine.Engine: [no key 0.00024s] ()
+2022-05-01 20:03:19,288 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:19,407 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:19,407 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("song_user")
+2022-05-01 20:03:19,407 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,408 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("song_user")
+2022-05-01 20:03:19,408 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,408 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("songs")
+2022-05-01 20:03:19,408 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,409 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("songs")
+2022-05-01 20:03:19,409 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,409 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+2022-05-01 20:03:19,409 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,410 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("users")
+2022-05-01 20:03:19,410 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,410 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE songs (
+	id INTEGER NOT NULL, 
+	title VARCHAR(300), 
+	artist VARCHAR(300), 
+	year VARCHAR(50), 
+	genre VARCHAR(300), 
+	PRIMARY KEY (id)
+)
+
+
+2022-05-01 20:03:19,411 [INFO] sqlalchemy.engine.Engine: [no key 0.00017s] ()
+2022-05-01 20:03:19,411 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE users (
+	id INTEGER NOT NULL, 
+	email VARCHAR(120) NOT NULL, 
+	password VARCHAR(300) NOT NULL, 
+	about VARCHAR(300), 
+	authenticated BOOLEAN, 
+	registered_on DATETIME, 
+	is_active BOOLEAN DEFAULT '1' NOT NULL, 
+	is_admin BOOLEAN DEFAULT '0' NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (email), 
+	UNIQUE (password)
+)
+
+
+2022-05-01 20:03:19,411 [INFO] sqlalchemy.engine.Engine: [no key 0.00019s] ()
+2022-05-01 20:03:19,412 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE song_user (
+	user_id INTEGER, 
+	song_id INTEGER, 
+	FOREIGN KEY(user_id) REFERENCES users (id), 
+	FOREIGN KEY(song_id) REFERENCES songs (id)
+)
+
+
+2022-05-01 20:03:19,412 [INFO] sqlalchemy.engine.Engine: [no key 0.00019s] ()
+2022-05-01 20:03:19,412 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:19,532 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:19,533 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("song_user")
+2022-05-01 20:03:19,533 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,533 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("song_user")
+2022-05-01 20:03:19,534 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,534 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("songs")
+2022-05-01 20:03:19,534 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,534 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("songs")
+2022-05-01 20:03:19,534 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,535 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+2022-05-01 20:03:19,535 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,535 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("users")
+2022-05-01 20:03:19,535 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,536 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE songs (
+	id INTEGER NOT NULL, 
+	title VARCHAR(300), 
+	artist VARCHAR(300), 
+	year VARCHAR(50), 
+	genre VARCHAR(300), 
+	PRIMARY KEY (id)
+)
+
+
+2022-05-01 20:03:19,536 [INFO] sqlalchemy.engine.Engine: [no key 0.00017s] ()
+2022-05-01 20:03:19,537 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE users (
+	id INTEGER NOT NULL, 
+	email VARCHAR(120) NOT NULL, 
+	password VARCHAR(300) NOT NULL, 
+	about VARCHAR(300), 
+	authenticated BOOLEAN, 
+	registered_on DATETIME, 
+	is_active BOOLEAN DEFAULT '1' NOT NULL, 
+	is_admin BOOLEAN DEFAULT '0' NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (email), 
+	UNIQUE (password)
+)
+
+
+2022-05-01 20:03:19,537 [INFO] sqlalchemy.engine.Engine: [no key 0.00018s] ()
+2022-05-01 20:03:19,537 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE song_user (
+	user_id INTEGER, 
+	song_id INTEGER, 
+	FOREIGN KEY(user_id) REFERENCES users (id), 
+	FOREIGN KEY(song_id) REFERENCES songs (id)
+)
+
+
+2022-05-01 20:03:19,537 [INFO] sqlalchemy.engine.Engine: [no key 0.00020s] ()
+2022-05-01 20:03:19,538 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:19,655 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:19,655 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("song_user")
+2022-05-01 20:03:19,656 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,656 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("song_user")
+2022-05-01 20:03:19,656 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,656 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("songs")
+2022-05-01 20:03:19,657 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,657 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("songs")
+2022-05-01 20:03:19,657 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,657 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+2022-05-01 20:03:19,657 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,658 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("users")
+2022-05-01 20:03:19,658 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,658 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE songs (
+	id INTEGER NOT NULL, 
+	title VARCHAR(300), 
+	artist VARCHAR(300), 
+	year VARCHAR(50), 
+	genre VARCHAR(300), 
+	PRIMARY KEY (id)
+)
+
+
+2022-05-01 20:03:19,659 [INFO] sqlalchemy.engine.Engine: [no key 0.00018s] ()
+2022-05-01 20:03:19,659 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE users (
+	id INTEGER NOT NULL, 
+	email VARCHAR(120) NOT NULL, 
+	password VARCHAR(300) NOT NULL, 
+	about VARCHAR(300), 
+	authenticated BOOLEAN, 
+	registered_on DATETIME, 
+	is_active BOOLEAN DEFAULT '1' NOT NULL, 
+	is_admin BOOLEAN DEFAULT '0' NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (email), 
+	UNIQUE (password)
+)
+
+
+2022-05-01 20:03:19,659 [INFO] sqlalchemy.engine.Engine: [no key 0.00017s] ()
+2022-05-01 20:03:19,660 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE song_user (
+	user_id INTEGER, 
+	song_id INTEGER, 
+	FOREIGN KEY(user_id) REFERENCES users (id), 
+	FOREIGN KEY(song_id) REFERENCES songs (id)
+)
+
+
+2022-05-01 20:03:19,660 [INFO] sqlalchemy.engine.Engine: [no key 0.00018s] ()
+2022-05-01 20:03:19,660 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:19,776 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:19,776 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("song_user")
+2022-05-01 20:03:19,776 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,777 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("song_user")
+2022-05-01 20:03:19,777 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,777 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("songs")
+2022-05-01 20:03:19,777 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,777 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("songs")
+2022-05-01 20:03:19,778 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,778 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+2022-05-01 20:03:19,778 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,778 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("users")
+2022-05-01 20:03:19,778 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,779 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE songs (
+	id INTEGER NOT NULL, 
+	title VARCHAR(300), 
+	artist VARCHAR(300), 
+	year VARCHAR(50), 
+	genre VARCHAR(300), 
+	PRIMARY KEY (id)
+)
+
+
+2022-05-01 20:03:19,779 [INFO] sqlalchemy.engine.Engine: [no key 0.00016s] ()
+2022-05-01 20:03:19,780 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE users (
+	id INTEGER NOT NULL, 
+	email VARCHAR(120) NOT NULL, 
+	password VARCHAR(300) NOT NULL, 
+	about VARCHAR(300), 
+	authenticated BOOLEAN, 
+	registered_on DATETIME, 
+	is_active BOOLEAN DEFAULT '1' NOT NULL, 
+	is_admin BOOLEAN DEFAULT '0' NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (email), 
+	UNIQUE (password)
+)
+
+
+2022-05-01 20:03:19,780 [INFO] sqlalchemy.engine.Engine: [no key 0.00018s] ()
+2022-05-01 20:03:19,780 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE song_user (
+	user_id INTEGER, 
+	song_id INTEGER, 
+	FOREIGN KEY(user_id) REFERENCES users (id), 
+	FOREIGN KEY(song_id) REFERENCES songs (id)
+)
+
+
+2022-05-01 20:03:19,780 [INFO] sqlalchemy.engine.Engine: [no key 0.00017s] ()
+2022-05-01 20:03:19,781 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:19,898 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:19,898 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("song_user")
+2022-05-01 20:03:19,898 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,899 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("song_user")
+2022-05-01 20:03:19,899 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,899 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("songs")
+2022-05-01 20:03:19,899 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,900 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("songs")
+2022-05-01 20:03:19,900 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,900 [INFO] sqlalchemy.engine.Engine: PRAGMA main.table_info("users")
+2022-05-01 20:03:19,900 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,901 [INFO] sqlalchemy.engine.Engine: PRAGMA temp.table_info("users")
+2022-05-01 20:03:19,901 [INFO] sqlalchemy.engine.Engine: [raw sql] ()
+2022-05-01 20:03:19,901 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE songs (
+	id INTEGER NOT NULL, 
+	title VARCHAR(300), 
+	artist VARCHAR(300), 
+	year VARCHAR(50), 
+	genre VARCHAR(300), 
+	PRIMARY KEY (id)
+)
+
+
+2022-05-01 20:03:19,902 [INFO] sqlalchemy.engine.Engine: [no key 0.00018s] ()
+2022-05-01 20:03:19,902 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE users (
+	id INTEGER NOT NULL, 
+	email VARCHAR(120) NOT NULL, 
+	password VARCHAR(300) NOT NULL, 
+	about VARCHAR(300), 
+	authenticated BOOLEAN, 
+	registered_on DATETIME, 
+	is_active BOOLEAN DEFAULT '1' NOT NULL, 
+	is_admin BOOLEAN DEFAULT '0' NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (email), 
+	UNIQUE (password)
+)
+
+
+2022-05-01 20:03:19,902 [INFO] sqlalchemy.engine.Engine: [no key 0.00017s] ()
+2022-05-01 20:03:19,903 [INFO] sqlalchemy.engine.Engine: 
+CREATE TABLE song_user (
+	user_id INTEGER, 
+	song_id INTEGER, 
+	FOREIGN KEY(user_id) REFERENCES users (id), 
+	FOREIGN KEY(song_id) REFERENCES songs (id)
+)
+
+
+2022-05-01 20:03:19,903 [INFO] sqlalchemy.engine.Engine: [no key 0.00023s] ()
+2022-05-01 20:03:19,903 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:19,904 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:19,907 [INFO] sqlalchemy.engine.Engine: SELECT count(*) AS count_1 
+FROM (SELECT users.is_active AS users_is_active, users.id AS users_id, users.email AS users_email, users.password AS users_password, users.about AS users_about, users.authenticated AS users_authenticated, users.registered_on AS users_registered_on, users.is_admin AS users_is_admin 
+FROM users) AS anon_1
+2022-05-01 20:03:19,907 [INFO] sqlalchemy.engine.Engine: [generated in 0.00022s] ()
+2022-05-01 20:03:19,909 [INFO] sqlalchemy.engine.Engine: SELECT count(*) AS count_1 
+FROM (SELECT songs.id AS songs_id, songs.title AS songs_title, songs.artist AS songs_artist, songs.year AS songs_year, songs.genre AS songs_genre 
+FROM songs) AS anon_1
+2022-05-01 20:03:19,909 [INFO] sqlalchemy.engine.Engine: [generated in 0.00021s] ()
+2022-05-01 20:03:19,910 [INFO] sqlalchemy.engine.Engine: INSERT INTO users (email, password, about, authenticated, registered_on) VALUES (?, ?, ?, ?, ?)
+2022-05-01 20:03:19,910 [INFO] sqlalchemy.engine.Engine: [generated in 0.00023s] ('bx5@njit.edu', '123456', None, 0, '2022-05-01 20:03:19.909646')
+2022-05-01 20:03:19,911 [INFO] sqlalchemy.engine.Engine: SELECT users.is_active AS users_is_active, users.id AS users_id, users.email AS users_email, users.password AS users_password, users.about AS users_about, users.authenticated AS users_authenticated, users.registered_on AS users_registered_on, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.email = ?
+ LIMIT ? OFFSET ?
+2022-05-01 20:03:19,911 [INFO] sqlalchemy.engine.Engine: [generated in 0.00021s] ('bx5@njit.edu', 1, 0)
+2022-05-01 20:03:19,913 [INFO] sqlalchemy.engine.Engine: SELECT songs.id AS songs_id, songs.title AS songs_title, songs.artist AS songs_artist, songs.year AS songs_year, songs.genre AS songs_genre 
+FROM songs, song_user 
+WHERE ? = song_user.user_id AND songs.id = song_user.song_id
+2022-05-01 20:03:19,913 [INFO] sqlalchemy.engine.Engine: [generated in 0.00019s] (1,)
+2022-05-01 20:03:19,914 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:19,914 [INFO] sqlalchemy.engine.Engine: [generated in 0.00022s] ('test', 'smap', '2020', 'testGenre')
+2022-05-01 20:03:19,914 [INFO] sqlalchemy.engine.Engine: INSERT INTO songs (title, artist, year, genre) VALUES (?, ?, ?, ?)
+2022-05-01 20:03:19,914 [INFO] sqlalchemy.engine.Engine: [cached since 0.0007005s ago] ('test2', 'te', '2021', 'testGenre')
+2022-05-01 20:03:19,915 [INFO] sqlalchemy.engine.Engine: INSERT INTO song_user (user_id, song_id) VALUES (?, ?)
+2022-05-01 20:03:19,915 [INFO] sqlalchemy.engine.Engine: [generated in 0.00023s] ((1, 2), (1, 1))
+2022-05-01 20:03:19,916 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:19,916 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:19,916 [INFO] sqlalchemy.engine.Engine: SELECT count(*) AS count_1 
+FROM (SELECT songs.id AS songs_id, songs.title AS songs_title, songs.artist AS songs_artist, songs.year AS songs_year, songs.genre AS songs_genre 
+FROM songs) AS anon_1
+2022-05-01 20:03:19,917 [INFO] sqlalchemy.engine.Engine: [cached since 0.008031s ago] ()
+2022-05-01 20:03:19,917 [INFO] sqlalchemy.engine.Engine: SELECT songs.id AS songs_id, songs.title AS songs_title, songs.artist AS songs_artist, songs.year AS songs_year, songs.genre AS songs_genre 
+FROM songs 
+WHERE songs.title = ?
+ LIMIT ? OFFSET ?
+2022-05-01 20:03:19,918 [INFO] sqlalchemy.engine.Engine: [generated in 0.00019s] ('test', 1, 0)
+2022-05-01 20:03:19,918 [INFO] sqlalchemy.engine.Engine: UPDATE songs SET title=? WHERE songs.id = ?
+2022-05-01 20:03:19,919 [INFO] sqlalchemy.engine.Engine: [generated in 0.00021s] ('SuperSongTitle', 1)
+2022-05-01 20:03:19,919 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:19,919 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:19,920 [INFO] sqlalchemy.engine.Engine: SELECT songs.id AS songs_id, songs.title AS songs_title, songs.artist AS songs_artist, songs.year AS songs_year, songs.genre AS songs_genre 
+FROM songs 
+WHERE songs.title = ?
+ LIMIT ? OFFSET ?
+2022-05-01 20:03:19,920 [INFO] sqlalchemy.engine.Engine: [cached since 0.002336s ago] ('SuperSongTitle', 1, 0)
+2022-05-01 20:03:19,920 [INFO] sqlalchemy.engine.Engine: SELECT songs.id AS songs_id, songs.title AS songs_title, songs.artist AS songs_artist, songs.year AS songs_year, songs.genre AS songs_genre 
+FROM songs 
+WHERE songs.title = ?
+ LIMIT ? OFFSET ?
+2022-05-01 20:03:19,921 [INFO] sqlalchemy.engine.Engine: [cached since 0.00306s ago] ('test2', 1, 0)
+2022-05-01 20:03:19,922 [INFO] sqlalchemy.engine.Engine: SELECT users.is_active AS users_is_active, users.id AS users_id, users.email AS users_email, users.password AS users_password, users.about AS users_about, users.authenticated AS users_authenticated, users.registered_on AS users_registered_on, users.is_admin AS users_is_admin 
+FROM users, song_user 
+WHERE ? = song_user.song_id AND users.id = song_user.user_id
+2022-05-01 20:03:19,922 [INFO] sqlalchemy.engine.Engine: [generated in 0.00019s] (1,)
+2022-05-01 20:03:19,923 [INFO] sqlalchemy.engine.Engine: SELECT users.is_active AS users_is_active, users.id AS users_id, users.email AS users_email, users.password AS users_password, users.about AS users_about, users.authenticated AS users_authenticated, users.registered_on AS users_registered_on, users.is_admin AS users_is_admin 
+FROM users, song_user 
+WHERE ? = song_user.song_id AND users.id = song_user.user_id
+2022-05-01 20:03:19,923 [INFO] sqlalchemy.engine.Engine: [cached since 0.001158s ago] (2,)
+2022-05-01 20:03:19,924 [INFO] sqlalchemy.engine.Engine: SELECT songs.id AS songs_id, songs.title AS songs_title, songs.artist AS songs_artist, songs.year AS songs_year, songs.genre AS songs_genre 
+FROM songs, song_user 
+WHERE ? = song_user.user_id AND songs.id = song_user.song_id
+2022-05-01 20:03:19,924 [INFO] sqlalchemy.engine.Engine: [cached since 0.01112s ago] (1,)
+2022-05-01 20:03:19,925 [INFO] sqlalchemy.engine.Engine: DELETE FROM song_user WHERE song_user.user_id = ? AND song_user.song_id = ?
+2022-05-01 20:03:19,925 [INFO] sqlalchemy.engine.Engine: [generated in 0.00020s] ((1, 1), (1, 2))
+2022-05-01 20:03:19,925 [INFO] sqlalchemy.engine.Engine: DELETE FROM songs WHERE songs.id = ?
+2022-05-01 20:03:19,925 [INFO] sqlalchemy.engine.Engine: [generated in 0.00022s] ((1,), (2,))
+2022-05-01 20:03:19,926 [INFO] sqlalchemy.engine.Engine: DELETE FROM users WHERE users.id = ?
+2022-05-01 20:03:19,926 [INFO] sqlalchemy.engine.Engine: [generated in 0.00021s] (1,)
+2022-05-01 20:03:19,926 [INFO] sqlalchemy.engine.Engine: COMMIT
+2022-05-01 20:03:19,927 [INFO] sqlalchemy.engine.Engine: BEGIN (implicit)
+2022-05-01 20:03:19,927 [INFO] sqlalchemy.engine.Engine: SELECT count(*) AS count_1 
+FROM (SELECT users.is_active AS users_is_active, users.id AS users_id, users.email AS users_email, users.password AS users_password, users.about AS users_about, users.authenticated AS users_authenticated, users.registered_on AS users_registered_on, users.is_admin AS users_is_admin 
+FROM users) AS anon_1
+2022-05-01 20:03:19,927 [INFO] sqlalchemy.engine.Engine: [cached since 0.02097s ago] ()
+2022-05-01 20:03:19,928 [INFO] sqlalchemy.engine.Engine: SELECT count(*) AS count_1 
+FROM (SELECT songs.id AS songs_id, songs.title AS songs_title, songs.artist AS songs_artist, songs.year AS songs_year, songs.genre AS songs_genre 
+FROM songs) AS anon_1
+2022-05-01 20:03:19,928 [INFO] sqlalchemy.engine.Engine: [cached since 0.01965s ago] ()
+2022-05-01 20:03:19,929 [INFO] sqlalchemy.engine.Engine: ROLLBACK

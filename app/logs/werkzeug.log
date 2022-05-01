@@ -174,3 +174,4 @@
 2022-05-01 19:43:26,892 [INFO] werkzeug: 172.19.0.1 - - [01/May/2022 19:43:26] "GET /songs/upload HTTP/1.1" 200 -
 2022-05-01 19:43:27,763 [INFO] werkzeug: 172.19.0.1 - - [01/May/2022 19:43:27] "GET /users HTTP/1.1" 200 -
 2022-05-01 19:43:27,798 [INFO] werkzeug: 172.19.0.1 - - [01/May/2022 19:43:27] "[36mGET /bootstrap/static/icons/bootstrap-icons.svg HTTP/1.1[0m" 304 -
+2022-05-01 19:44:51,556 [INFO] werkzeug:  * Detected change in '/home/myuser/app/cli/__init__.py', reloading
