@@ -4590,3 +4590,39 @@ INFO in __init__: requested
 INFO in __init__: db_dir:/home/myuser/app
 [2022-04-28 03:43:04,449] [161] 127.0.0.1 requested http://localhost/page5
 INFO in __init__: requested
+[2022-05-01 19:39:01,627] [8] 172.19.0.1 requested http://localhost/transactions
+INFO in __init__: db_dir:/home/myuser/app
+[2022-05-01 19:39:01,773] [8] 172.19.0.1 requested http://localhost/transactions
+INFO in __init__: requested
+[2022-05-01 19:39:03,510] [8] 172.19.0.1 requested http://localhost/register
+INFO in __init__: requested
+[2022-05-01 19:39:10,784] [8] 172.19.0.1 requested http://localhost/register
+INFO in __init__: requested
+[2022-05-01 19:39:10,796] [8] 172.19.0.1 requested http://localhost/login
+INFO in __init__: requested
+[2022-05-01 19:39:10,816] [8] 172.19.0.1 requested http://localhost/dashboard
+INFO in __init__: requested
+[2022-05-01 19:39:12,207] [8] 172.19.0.1 requested http://localhost/songs/upload
+INFO in __init__: requested
+[2022-05-01 19:39:17,726] [8] 172.19.0.1 requested http://localhost/songs/upload
+INFO in __init__: requested
+[2022-05-01 19:39:17,819] [8] 172.19.0.1 requested http://localhost/songs
+INFO in __init__: requested
+[2022-05-01 19:43:19,239] [8] 172.19.0.1 requested http://localhost/songs/upload
+INFO in __init__: requested
+[2022-05-01 19:43:20,324] [8] 172.19.0.1 requested http://localhost/users
+INFO in __init__: requested
+[2022-05-01 19:43:21,548] [8] 172.19.0.1 requested http://localhost/about
+INFO in __init__: requested
+[2022-05-01 19:43:23,269] [8] 172.19.0.1 requested http://localhost/welcome
+INFO in __init__: requested
+[2022-05-01 19:43:24,386] [8] 172.19.0.1 requested http://localhost/songs
+INFO in __init__: requested
+[2022-05-01 19:43:25,528] [8] 172.19.0.1 requested http://localhost/dashboard
+INFO in __init__: requested
+[2022-05-01 19:43:26,408] [8] 172.19.0.1 requested http://localhost/songs
+INFO in __init__: requested
+[2022-05-01 19:43:26,890] [8] 172.19.0.1 requested http://localhost/songs/upload
+INFO in __init__: requested
+[2022-05-01 19:43:27,762] [8] 172.19.0.1 requested http://localhost/users
+INFO in __init__: requested
